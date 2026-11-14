@@ -4,7 +4,8 @@ name: Drive Paketini Aktar (tek dosya)
 # aapt2 ile okunur (paket adı + sürüm), apk/ klasörüne kanonik adıyla yazılır,
 # ikonlar çıkarılır, kataloglar üretilir ve commit edilir.
 #
-# Girdi: Drive dosya linki ya da sadece dosya ID'si.
+# "zorla: evet" ise zip'teki dosya sürüm aynı/eski olsa bile birebir kopyalanır
+# ve o eklentiler tools/pinli.txt içine yazılır (upstream işi bunları ezmez).
 on:
   workflow_dispatch:
     inputs:
@@ -18,6 +19,12 @@ on:
         default: "uygula"
         type: choice
         options: [kesif, uygula]
+      zorla:
+        description: "zorla: zip'teki dosyayı koşulsuz yaz (evet/hayir)"
+        required: true
+        default: "evet"
+        type: choice
+        options: [evet, hayir]
 
 permissions:
   contents: write
@@ -75,12 +82,14 @@ jobs:
       - name: APK'ları çöz + aktar + rapor
         env:
           MOD: ${{ inputs.mod }}
+          ZORLA: ${{ inputs.zorla }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python3 - <<'PY'
-          import os, re, zipfile, shutil, subprocess, pathlib, json, datetime
+          import os, re, zipfile, shutil, subprocess, pathlib, json, datetime, hashlib
 
           MOD = os.environ["MOD"]
+          ZORLA = os.environ.get("ZORLA", "evet") == "evet"
           repo = pathlib.Path.cwd()
           apk_dir = repo / "apk"
           tmp = pathlib.Path(os.environ["RUNNER_TEMP"])
@@ -92,10 +101,21 @@ jobs:
           def say(s=""):
               print(s); lines.append(s)
 
+          def sha(p):
+              h = hashlib.sha256()
+              h.update(pathlib.Path(p).read_bytes())
+              return h.hexdigest()
+
+          def vt(s):
+              try:
+                  return tuple(int(x) for x in s.split("."))
+              except ValueError:
+                  return (0,)
+
           say("# Drive Paketi Aktarım Raporu")
           say()
           say(f"- Tarih: {datetime.datetime.utcnow():%Y-%m-%d %H:%M} UTC")
-          say(f"- Mod: **{MOD}**")
+          say(f"- Mod: **{MOD}** | zorla: **{'evet' if ZORLA else 'hayır'}**")
           say(f"- Çalışma: {os.environ.get('RUN_URL','')}")
           say()
 
@@ -108,7 +128,6 @@ jobs:
           say(f"- APK: {len(apks)} | PNG: {len(pngs)} | Kotlin kaynak: {len(kts)}")
           say()
 
-          # aapt2 bul (Android SDK runner'da hazır)
           aapt = None
           for cand in sorted(pathlib.Path(os.environ.get("ANDROID_HOME", "/usr/local/lib/android/sdk")).glob("build-tools/*/aapt2"), reverse=True):
               if cand.is_file():
@@ -128,15 +147,12 @@ jobs:
               label = re.search(r"application-label:'([^']*)'", r.stdout)
               icon = re.search(r"application-icon-\d+:'([^']*)'", r.stdout)
               return {
-                  "pkg": m.group(1),
-                  "code": m.group(2),
-                  "version": m.group(3),
+                  "pkg": m.group(1), "code": m.group(2), "version": m.group(3),
                   "label": label.group(1) if label else None,
                   "icon_path": icon.group(1) if icon else None,
               }
 
           def apk_icon(path, res_path):
-              """APK içinden ikon png'sini çıkar."""
               try:
                   with zipfile.ZipFile(path) as z:
                       names = [n for n in z.namelist() if n.startswith("res/") and n.lower().endswith(".png")]
@@ -144,9 +160,8 @@ jobs:
                           return z.read(res_path)
                       best = None
                       for n in names:
-                          if "ic_launcher" in n:
-                              if best is None or len(z.read(n)) > len(z.read(best)):
-                                  best = n
+                          if "ic_launcher" in n and (best is None or len(z.read(n)) > len(z.read(best))):
+                              best = n
                       if best:
                           return z.read(best)
               except Exception:
@@ -159,51 +174,54 @@ jobs:
               if not info.get("pkg"):
                   skipped.append((a.name, "paket adı okunamadı"))
                   continue
-              pkg = info["pkg"]
-              ver = info.get("version") or "1.6.0"
-              parts = pkg.split(".")
-              lang = parts[-2] if len(parts) >= 2 else "tr"
-              slug = parts[-1]
-              info.update({"lang": lang, "slug": slug, "ver": ver, "file": a})
+              parts = info["pkg"].split(".")
+              info.update({
+                  "lang": parts[-2] if len(parts) >= 2 else "tr",
+                  "slug": parts[-1],
+                  "ver": info.get("version") or "1.6.0",
+                  "file": a,
+                  "zip_sha": sha(a),
+              })
               plan.append(info)
 
           say("## Paketteki eklentiler")
           say()
-          say("| Paket | Sürüm | Kod | Görünen ad |")
+          say("| Paket | Zip sürümü | Kod | Görünen ad |")
           say("|---|---|---|---|")
           for i in plan:
               say(f"| `{i['pkg']}` | {i['ver']} | {i.get('code','?')} | {i.get('label','?')} |")
           if skipped:
               say()
-              say("Atlananlar:")
               for n, why in skipped:
-                  say(f"- `{n}` — {why}")
+                  say(f"- atlandı: `{n}` — {why}")
           say()
 
-          added, updated = [], []
+          yazilan, eski_surum, dokunulmadi, ayni_hash = [], [], [], []
           if MOD == "uygula":
               for i in plan:
                   target = apk_dir / f"tachiyomi-{i['lang']}.{i['slug']}-v{i['ver']}.apk"
                   icon_target = apk_dir / f"{i['pkg']}.png"
-                  # aynı paketin mevcut dosyaları
                   old = [p for p in apk_dir.glob(f"tachiyomi-{i['lang']}.{i['slug']}-v*.apk")]
-                  old_names = {p.name for p in old}
-                  # sürüm düşürmeyi engelle: repodaki sürüm daha yeniyse dokunma
-                  def vt(s):
-                      try:
-                          return tuple(int(x) for x in s.split("."))
-                      except ValueError:
-                          return (0,)
-                  newer = [(p, vt(re.search(r"-v(\d+\.\d+\.\d+)\.apk$", p.name).group(1))) for p in old]
-                  if any(v > vt(i["ver"]) for _, v in newer):
+                  older_versions = [p for p in old if vt(re.search(r"-v(\d+\.\d+\.\d+)\.apk$", p.name).group(1)) > vt(i["ver"])]
+
+                  if not ZORLA and older_versions:
+                      dokunulmadi.append((i["pkg"], i["ver"], sorted(p.name for p in older_versions)))
                       continue
-                  shutil.copy2(i["file"], target)
+
+                  already_same = target.is_file() and sha(target) == i["zip_sha"]
+                  if already_same:
+                      ayni_hash.append(i["pkg"])
+                  else:
+                      shutil.copy2(i["file"], target)
+                      if older_versions:
+                          eski_surum.append((i["pkg"], i["ver"], [p.name for p in older_versions]))
+                      else:
+                          yazilan.append((i["pkg"], i["ver"]))
                   for p in old:
                       if p.name != target.name:
                           p.unlink()
                   if not icon_target.exists():
                       data = None
-                      # zip içinde hazır ikon var mı?
                       for png in pngs:
                           if png.name == f"{i['pkg']}.png":
                               data = png.read_bytes(); break
@@ -211,13 +229,17 @@ jobs:
                           data = apk_icon(i["file"], i.get("icon_path"))
                       if data:
                           icon_target.write_bytes(data)
-                  if old_names and old_names != {target.name}:
-                      updated.append((i["pkg"], sorted(old_names)[0], f"tachiyomi-{i['lang']}.{i['slug']}-v{i['ver']}.apk"))
-                  else:
-                      added.append((i["pkg"], i["ver"]))
 
-          # APK etiketlerinden isim haritası ("Tachiyomi: X" -> "X")
-          if MOD == "uygula":
+              # sabitleme listesi: bu eklentiler upstream tarafından ezilmez
+              pin_file = repo / "tools" / "pinli.txt"
+              pins = set()
+              if pin_file.is_file():
+                  pins = {l.strip() for l in pin_file.read_text(encoding="utf-8").splitlines() if l.strip()}
+              pins |= {i["slug"] for i in plan}
+              pin_file.parent.mkdir(parents=True, exist_ok=True)
+              pin_file.write_text("\n".join(sorted(pins)) + "\n", encoding="utf-8")
+
+              # isim haritası (APK etiketi -> ad)
               name_file = repo / "tools" / "isimler.json"
               name_map = {}
               if name_file.is_file():
@@ -229,7 +251,6 @@ jobs:
                   label = (i.get("label") or "").replace("Tachiyomi: ", "").strip()
                   if label:
                       name_map[i["slug"]] = label
-              name_file.parent.mkdir(parents=True, exist_ok=True)
               name_file.write_text(json.dumps(dict(sorted(name_map.items())), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
           say("## Sonuç")
@@ -237,13 +258,23 @@ jobs:
           if MOD != "uygula":
               say("_keşif modu — dosya yazılmadı._")
           else:
-              say(f"- Repoya yazılan: **{len(added)}**")
-              for p, v in added:
+              say(f"- Zip'ten **birebir yazılan**: {len(yazilan)}")
+              for p, v in yazilan:
                   say(f"  - `{p}` {v}")
-              say(f"- Sürümü değiştirilen: **{len(updated)}**")
-              for p, o, n in updated:
-                  say(f"  - `{p}`: {o} → {n}")
+              say(f"- Zip'ten yazılıp daha yeni sürümü kaldırılan: {len(eski_surum)}")
+              for p, v, olds in eski_surum:
+                  say(f"  - `{p}` {v} (silinen: {', '.join(olds)})")
+              say(f"- Zaten birebir aynı (hash eşleşti): {len(ayni_hash)}")
+              for p in ayni_hash:
+                  say(f"  - `{p}`")
+              if dokunulmadi:
+                  say(f"- Zorla kapalı olduğu için dokunulmayan: {len(dokunulmadi)}")
+                  for p, v, olds in dokunulmadi:
+                      say(f"  - `{p}` {v} (repoda {', '.join(olds)})")
+              say()
+              say(f"Toplam paket: **{len(plan)}** · doğrulanan: **{len(yazilan) + len(eski_surum) + len(ayni_hash)}**")
           say()
+
           (repo / "docs").mkdir(exist_ok=True)
           (repo / "docs" / "paket-raporu.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
           PY
@@ -262,5 +293,5 @@ jobs:
             exit 0
           fi
           git diff --cached --stat | tail -20
-          git commit -m "chore(paket): Drive paketinden eklentileri aktar (mod: ${{ inputs.mod }})"
+          git commit -m "chore(paket): zip'teki APK'ları birebir yaz (zorla: ${{ inputs.zorla }}) + sabitleme listesi"
           git push

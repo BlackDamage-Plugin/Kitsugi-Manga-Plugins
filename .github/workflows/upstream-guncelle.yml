@@ -106,7 +106,12 @@ jobs:
           out(f"- Upstream katalog: {len(extensions)} eklenti / {len(tr)} TR")
           out()
 
-          new, upd, same, failed, icons = [], [], [], [], 0
+          pin_file = repo / "tools" / "pinli.txt"
+          pins = set()
+          if pin_file.is_file():
+              pins = {l.strip() for l in pin_file.read_text(encoding="utf-8").splitlines() if l.strip()}
+
+          new, upd, same, failed, icons, pinned = [], [], [], [], 0, []
           for e in sorted(tr, key=lambda x: x["name"]):
               pkg = e["packageName"]
               slug = pkg.split(".tr.")[-1]
@@ -114,6 +119,9 @@ jobs:
               res = e.get("resources") or {}
               apk_url, icon_url = res.get("apkUrl"), res.get("iconUrl")
               cur = local.get(("tr", slug))
+              if slug in pins:
+                  pinned.append((pkg, ".".join(map(str, cur[0])) if cur else "-", ver))
+                  continue
               if cur and cur[0] >= vt(ver):
                   same.append((pkg, ".".join(map(str, cur[0])), ver))
                   continue
@@ -147,6 +155,9 @@ jobs:
           for p, o, v in upd:
               out(f"  - `{p}` {o} → {v}")
           out(f"- Zaten güncel: **{len(same)}**")
+          out(f"- Sabitlenmiş (zip sürümü korunuyor): **{len(pinned)}**")
+          for p, lv, uv in pinned:
+              out(f"  - `{p}` repoda {lv} (upstream {uv})")
           out(f"- İndirilemeyen: **{len(failed)}**")
           for p, v, err in failed:
               out(f"  - `{p}` {v}: {err}")
