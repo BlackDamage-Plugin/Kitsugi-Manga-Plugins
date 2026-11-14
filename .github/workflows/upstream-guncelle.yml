@@ -1,0 +1,155 @@
+name: Eklentileri Güncelle (Upstream)
+
+# Keiyoushi'nin resmi yayın kataloğundan (en güncel derlemeler) TR eklentilerinin
+# APK + ikonlarını indirir, apk/ klasörünü günceller, katalogları üretir.
+# Sonuç docs/guncelleme-raporu.md olarak commit edilir.
+on:
+  workflow_dispatch:
+    inputs:
+      mod:
+        description: "kontrol (sadece rapor) | uygula (repoya işle)"
+        required: true
+        default: "uygula"
+        type: choice
+        options: [kontrol, uygula]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: upstream-guncelle
+  cancel-in-progress: false
+
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Upstream kataloğunu indir
+        run: |
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/upstream.json" \
+            "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.json"
+          python3 -c "
+          import json,os
+          d=json.load(open(os.environ['RUNNER_TEMP']+'/upstream.json'))
+          e=d['extensionList']['extensions']
+          print('upstream eklenti:',len(e))
+          print('tr:',sum(1 for x in e if '.extension.tr.' in x['packageName']))
+          "
+
+      - name: Karşılaştır + indir + rapor
+        env:
+          MOD: ${{ inputs.mod }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, shutil, urllib.request, datetime, pathlib
+
+          MOD = os.environ["MOD"]
+          repo = pathlib.Path.cwd()
+          apk_dir = repo / "apk"
+          up = json.load(open(os.environ["RUNNER_TEMP"] + "/upstream.json"))
+          extensions = up["extensionList"]["extensions"]
+          tr = [e for e in extensions if ".extension.tr." in e["packageName"]]
+
+          name_re = re.compile(r"^tachiyomi-(?P<lang>[a-z]{2,3})\.(?P<slug>[a-z0-9]+)-v(?P<ver>\d+\.\d+\.\d+)\.apk$")
+          def vt(s): return tuple(int(x) for x in s.split("."))
+
+          local = {}
+          for f in apk_dir.iterdir():
+              m = name_re.match(f.name)
+              if m:
+                  local[(m.group("lang"), m.group("slug"))] = (vt(m.group("ver")), f)
+
+          def fetch(url, dest):
+              req = urllib.request.Request(url, headers={"User-Agent": "kitsugi-repo-bot"})
+              with urllib.request.urlopen(req, timeout=180) as r, open(dest, "wb") as out:
+                  shutil.copyfileobj(r, out)
+
+          lines = []
+          def out(s=""):
+              print(s); lines.append(s)
+
+          out("# Upstream Güncelleme Raporu")
+          out()
+          out(f"- Tarih: {datetime.datetime.utcnow():%Y-%m-%d %H:%M} UTC")
+          out(f"- Mod: **{MOD}**")
+          out(f"- Çalışma: {os.environ.get('RUN_URL','')}")
+          out(f"- Upstream katalog: {len(extensions)} eklenti / {len(tr)} TR")
+          out()
+
+          new, upd, same, failed, icons = [], [], [], [], 0
+          for e in sorted(tr, key=lambda x: x["name"]):
+              pkg = e["packageName"]
+              slug = pkg.split(".tr.")[-1]
+              ver = e["versionName"]
+              res = e.get("resources") or {}
+              apk_url, icon_url = res.get("apkUrl"), res.get("iconUrl")
+              cur = local.get(("tr", slug))
+              if cur and cur[0] >= vt(ver):
+                  same.append((pkg, ".".join(map(str, cur[0])), ver))
+                  continue
+              if MOD != "uygula":
+                  (upd if cur else new).append((pkg, ".".join(map(str, cur[0])) if cur else "-", ver))
+                  continue
+              target = apk_dir / f"tachiyomi-tr.{slug}-v{ver}.apk"
+              try:
+                  if not apk_url:
+                      raise RuntimeError("apkUrl yok")
+                  fetch(apk_url, target)
+                  if icon_url:
+                      fetch(icon_url, apk_dir / f"{pkg}.png")
+                      icons += 1
+                  if cur:
+                      if cur[1] != target:
+                          cur[1].unlink(missing_ok=True)
+                      upd.append((pkg, ".".join(map(str, cur[0])), ver))
+                  else:
+                      new.append((pkg, "-", ver))
+              except Exception as exc:
+                  target.unlink(missing_ok=True)
+                  failed.append((pkg, ver, str(exc)[:120]))
+
+          out("## Sonuç")
+          out()
+          out(f"- **Yeni eklenen:** {len(new)}")
+          for p, _o, v in new:
+              out(f"  - `{p}` {v}")
+          out(f"- **Güncellenen:** {len(upd)}")
+          for p, o, v in upd:
+              out(f"  - `{p}` {o} → {v}")
+          out(f"- Zaten güncel: **{len(same)}**")
+          out(f"- İndirilemeyen: **{len(failed)}**")
+          for p, v, err in failed:
+              out(f"  - `{p}` {v}: {err}")
+          out()
+          out(f"İkon indirilen: {icons}" if MOD == "uygula" else "")
+
+          (repo / "docs").mkdir(exist_ok=True)
+          (repo / "docs" / "guncelleme-raporu.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+
+      - name: Katalog üret
+        if: inputs.mod == 'uygula'
+        run: python3 tools/build_catalog.py
+
+      - name: Değişiklikleri gönder
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok."
+            exit 0
+          fi
+          git diff --cached --stat | tail -20
+          git commit -m "chore(upstream): eklentileri en güncel sürümlere yükselt + kataloglar"
+          git push
