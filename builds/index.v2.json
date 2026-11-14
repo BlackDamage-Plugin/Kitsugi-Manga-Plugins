@@ -313,7 +313,7 @@
         ]
       },
       {
-        "name": "Kazescans",
+        "name": "KazeScans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.kazescans",
         "versionName": "1.6.19",
         "versionCode": "106019",
@@ -475,6 +475,24 @@
         ]
       },
       {
+        "name": "Manga Kulesi",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.mangakulesi",
+        "versionName": "1.6.8",
+        "versionCode": "106008",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangakulesi-v1.6.8.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangakulesi.png"
+        },
+        "sources": [
+          {
+            "name": "Mangakulesi",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
         "name": "Manga Kusu",
         "packageName": "eu.kanade.tachiyomi.extension.tr.mangakusu",
         "versionName": "1.6.3",
@@ -601,25 +619,7 @@
         ]
       },
       {
-        "name": "Mangakulesi",
-        "packageName": "eu.kanade.tachiyomi.extension.tr.mangakulesi",
-        "versionName": "1.6.8",
-        "versionCode": "106008",
-        "contentWarning": "CONTENT_WARNING_SAFE",
-        "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangakulesi-v1.6.8.apk",
-          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangakulesi.png"
-        },
-        "sources": [
-          {
-            "name": "Mangakulesi",
-            "language": "tr",
-            "type": "manga"
-          }
-        ]
-      },
-      {
-        "name": "Mangamac",
+        "name": "MangaMAC",
         "packageName": "eu.kanade.tachiyomi.extension.tr.mangamac",
         "versionName": "1.6.1",
         "versionCode": "106001",
@@ -709,6 +709,24 @@
         ]
       },
       {
+        "name": "Merlin Manga",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.merlinmanga",
+        "versionName": "1.6.58",
+        "versionCode": "106058",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.merlinmanga-v1.6.58.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.merlinmanga.png"
+        },
+        "sources": [
+          {
+            "name": "Merlinmanga",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
         "name": "Merlin Scans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.merlinscans",
         "versionName": "1.6.10",
@@ -721,24 +739,6 @@
         "sources": [
           {
             "name": "Merlin Scans",
-            "language": "tr",
-            "type": "manga"
-          }
-        ]
-      },
-      {
-        "name": "Merlinmanga",
-        "packageName": "eu.kanade.tachiyomi.extension.tr.merlinmanga",
-        "versionName": "1.6.58",
-        "versionCode": "106058",
-        "contentWarning": "CONTENT_WARNING_SAFE",
-        "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.merlinmanga-v1.6.58.apk",
-          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.merlinmanga.png"
-        },
-        "sources": [
-          {
-            "name": "Merlinmanga",
             "language": "tr",
             "type": "manga"
           }
@@ -961,7 +961,7 @@
         ]
       },
       {
-        "name": "Outcatsscans",
+        "name": "Outcats Scans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.outcatsscans",
         "versionName": "1.6.59",
         "versionCode": "106059",
