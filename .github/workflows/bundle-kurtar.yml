@@ -122,8 +122,17 @@ jobs:
           out(f"Geçmişte bulunan tekil APK sayısı: **{len(apks_hist)}**")
           out()
 
-          current = {p.name for p in apk_dir.glob("*.apk")}
-          missing = {k: v for k, v in apks_hist.items() if k not in current}
+          # karşılaştırma paket bazında yapılır (sürüm farkı "eksik" sayılmaz)
+          current_slugs = set()
+          for p in apk_dir.glob("*.apk"):
+              m = name_re.match(p.name)
+              if m:
+                  current_slugs.add(m.group("slug"))
+          missing = {}
+          for base, meta in apks_hist.items():
+              m = name_re.match(base)
+              if m and m.group("slug") not in current_slugs:
+                  missing[base] = meta
 
           out("## Geçmişte olup repoda olmayan APK'lar")
           out()
