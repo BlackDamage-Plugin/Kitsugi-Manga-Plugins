@@ -44,7 +44,7 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/drive"
           set +e
-          gdown --folder "${{ inputs.klasor }}" -O "$RUNNER_TEMP/drive" --remaining-ok > "$RUNNER_TEMP/gdown.log" 2>&1
+          gdown --folder "${{ inputs.klasor }}" -O "$RUNNER_TEMP/drive" > "$RUNNER_TEMP/gdown.log" 2>&1
           echo "gdown çıkış kodu: $?"
           tail -40 "$RUNNER_TEMP/gdown.log" || true
           find "$RUNNER_TEMP/drive" -type f -printf '%10s  %p\n' | sort -k2 || true
