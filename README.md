@@ -29,9 +29,59 @@ Kitsugi-Manga-Plugins/
         ├── tortugaceviri/       # Tortuga Çeviri
         ├── hayalistic/          # Hayalistic
         ├── mangaruhu/           # MangaRuhu
-        ├── sadscans/            # SadScans
         └── ... (76 eklenti)
+
+├── apk/                         # 📦 Derlenmiş eklentiler (APK + ikon)
+├── builds/                      # 🔁 Depo kökü normalize edildiğinde okunan kopya
+├── tools/build_catalog.py       # 🛠️ Katalog üreticisi / doğrulayıcısı
+├── .github/workflows/katalog.yml# ✅ Katalog ↔ APK tutarlılık denetimi
+├── index.json / plugins.json    # Katalog (v1 biçimi)
+└── *.min.json                   # Katalog (sıkıştırılmış — istemci önce bunu ister)
 ```
+
+---
+
+## 🧩 Katalog Dosyaları (Uygulamanın Okuduğu Dosyalar)
+
+Kitsugi istemcisi depo URL'sini `builds/index.json` uç noktasına normalize eder ve **önce `.min.json` sürümlerini** ister; `.min.json` yoksa eklentiler "depoda yok" görünür. Bu yüzden aşağıdaki 10 dosya her zaman birlikte üretilir:
+
+| Dosya | Amaç |
+|---|---|
+| `index.json`, `plugins.json` | Kök katalog (Mihon/Keiyoushi uyumlu dizi biçimi) |
+| `index.min.json`, `plugins.min.json` | Aynı kataloğun sıkıştırılmış hâli — istemcilerin ilk baktığı dosyalar |
+| `builds/index.json`, `builds/plugins.json` | Depo kökü normalize edildiğinde okunan uç nokta |
+| `builds/index.min.json`, `builds/plugins.min.json` | Sıkıştırılmış `builds/` kopyaları |
+| `builds/index.v2.json`, `builds/index.min.v2.json` | v2 biçimi (`extensionList.extensions` + `sources`) |
+
+**URL tabanı (tek kaynak):** `https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/`
+
+> Eski (`f26901964-eng`) hesap adı GitHub'da artık bulunmadığı için tüm `url` / `iconUrl` / `apkUrl` adresleri 404 dönüyordu; bu yüzden eklentiler uygulamada aktif görünmüyordu. Adresler artık tek yerden üretiliyor.
+
+### Katalog üretimi / doğrulama
+
+```bash
+python3 tools/build_catalog.py            # apk/ klasöründen 10 katalog dosyasını üretir
+python3 tools/build_catalog.py --check    # sadece denetler (CI: .github/workflows/katalog.yml)
+```
+
+Araç `apk/` içindeki her APK için ikon (`.png`) arar, `versionCode`'u sürümden hesaplar
+(`1.6.12 → 106012`), adları korur ve eksik dosya / tutarsızlık varsa uyarır.
+
+### ➕ Yeni eklenti ekleme
+
+1. APK'yı `apk/tachiyomi-tr.<paket>-v<sürüm>.apk` adıyla koy (örn. `tachiyomi-tr.sadscans-v1.6.19.apk`).
+2. İkonu `apk/eu.kanade.tachiyomi.extension.tr.<paket>.png` adıyla koy.
+3. `python3 tools/build_catalog.py` çalıştır, değişiklikleri gönder.
+
+Araç gerisini (10 katalog dosyası, `code`, sıralama, URL'ler) kendisi yapar; elle JSON düzenlemeye gerek yok.
+
+### ⚠️ Paket içinde bulunmayan kaynaklar
+
+Şu an `apk/` klasöründe 76 eklenti var. Aşağıdaki kaynaklar için **APK/ikon dosyası depoda yok**, bu yüzden kataloğa eklenemiyor (kataloğa eklenseydi uygulamada "indirilemedi" hatası verirdi):
+
+`SadScans` · `Initlise-Next` (DuckScans / LunariScans / AiluraScans / Oblivion Scans) · `TürkManga` · `Fenrir Scans`
+
+APK'ları temin edildiğinde yukarıdaki 3 adımlık akışla dakikalar içinde aktif hâle gelir.
 
 ---
 
@@ -44,7 +94,7 @@ Kitsugi-Manga-Plugins/
 | **Tortuga Çeviri** | `tortugaceviri.com` | WordPress (Madara) | 🟢 Aktif | One Piece ve Shonen odaklı, en istikrarlı ve kesintisiz kaynak. |
 | **AfroditScans** | `afroditscans.com` | SvelteKit (`__data.json`) | 🟢 Aktif | Çok hızlı bölüm güncellemeleri; Kitsugi'nin yerel `SvelteMangaEngine` motoruyla tam uyumlu. |
 | **MangaRuhu** | `mangaruhu.com` | WordPress (Madara) | 🟢 Aktif | Popüler romantik, dram ve fantastik manhwa arşivi. |
-| **SadScans** | `sadscans.com` | Özel HTML | 🟢 Aktif | Kaliteli çevirileriyle tanınan bağımsız ekip. |
+| **SadScans** | `sadscans.org` | Özel HTML | 🟡 APK yok | Kaliteli çevirileriyle tanınan bağımsız ekip; Kotatsu parser'ı depoda var, APK henüz yok. |
 
 ---
 

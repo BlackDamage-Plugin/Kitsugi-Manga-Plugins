@@ -1,0 +1,43 @@
+name: Katalog Doğrulama
+
+# apk/ klasörü ile katalog dosyaları (index.json, plugins.json, *.min.json,
+# builds/*) birbirinden ayrı düşmesin diye her push/PR'da kontrol edilir.
+on:
+  push:
+    branches: [main, builds]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dogrula:
+    name: Katalog ↔ APK tutarlılığı
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Katalogları doğrula
+        run: python3 tools/build_catalog.py --check
+
+  cdn-temizle:
+    name: jsDelivr önbelleğini temizle
+    needs: dogrula
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Katalog dosyalarını jsDelivr'den temizle
+        run: |
+          for f in index.json index.min.json plugins.json plugins.min.json \
+                   builds/index.json builds/index.min.json \
+                   builds/plugins.json builds/plugins.min.json \
+                   builds/index.v2.json builds/index.min.v2.json; do
+            echo "purge: $f"
+            curl -fsS "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/${f}" || true
+            echo
+          done
