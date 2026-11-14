@@ -1,23 +1,17 @@
 # Upstream Güncelleme Raporu
 
-- Tarih: 2026-11-14 22:28 UTC
+- Tarih: 2026-11-14 22:51 UTC
 - Mod: **uygula**
-- Çalışma: https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/actions/runs/43648303916
+- Çalışma: https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/actions/runs/43650211158
 - Upstream katalog: 1604 eklenti / 81 TR
 
 ## Sonuç
 
-- **Yeni eklenen:** 2
-  - `eu.kanade.tachiyomi.extension.tr.mangamac` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.outcatsscans` 1.6.59
-- **Güncellenen:** 6
-  - `eu.kanade.tachiyomi.extension.tr.arcurafansub` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.eskimangalar` 1.6.6 → 1.6.7
-  - `eu.kanade.tachiyomi.extension.tr.holyscans` 1.6.0 → 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.kuroimanga` 1.6.61 → 1.6.65
-  - `eu.kanade.tachiyomi.extension.tr.milasub` 1.6.58 → 1.6.61
-  - `eu.kanade.tachiyomi.extension.tr.norascans` 1.6.1 → 1.6.2
-- Zaten güncel: **73**
+- **Yeni eklenen:** 0
+- **Güncellenen:** 2
+  - `eu.kanade.tachiyomi.extension.tr.korelimanga` 1.6.8 → 1.6.9
+  - `eu.kanade.tachiyomi.extension.tr.mangaruhu` 1.6.8 → 1.6.9
+- Zaten güncel: **79**
 - İndirilemeyen: **0**
 
-İkon indirilen: 8
+İkon indirilen: 2
