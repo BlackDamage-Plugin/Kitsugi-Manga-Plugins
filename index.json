@@ -233,12 +233,12 @@
   {
     "name": "Koreli Manga",
     "pkg": "eu.kanade.tachiyomi.extension.tr.korelimanga",
-    "apk": "tachiyomi-tr.korelimanga-v1.6.9.apk",
+    "apk": "tachiyomi-tr.korelimanga-v1.6.8.apk",
     "lang": "tr",
-    "code": 106009,
-    "version": "1.6.9",
+    "code": 106008,
+    "version": "1.6.8",
     "nsfw": 0,
-    "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.korelimanga-v1.6.9.apk",
+    "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.korelimanga-v1.6.8.apk",
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.korelimanga.png"
   },
   {
@@ -365,12 +365,12 @@
   {
     "name": "Manga Ruhu",
     "pkg": "eu.kanade.tachiyomi.extension.tr.mangaruhu",
-    "apk": "tachiyomi-tr.mangaruhu-v1.6.9.apk",
+    "apk": "tachiyomi-tr.mangaruhu-v1.6.8.apk",
     "lang": "tr",
-    "code": 106009,
-    "version": "1.6.9",
+    "code": 106008,
+    "version": "1.6.8",
     "nsfw": 0,
-    "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangaruhu-v1.6.9.apk",
+    "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangaruhu-v1.6.8.apk",
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangaruhu.png"
   },
   {
@@ -880,7 +880,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.turkcemangaoku.png"
   },
   {
-    "name": "TürkManga",
+    "name": "Turkmanga",
     "pkg": "eu.kanade.tachiyomi.extension.tr.turkmanga",
     "apk": "tachiyomi-tr.turkmanga-v1.6.2.apk",
     "lang": "tr",
