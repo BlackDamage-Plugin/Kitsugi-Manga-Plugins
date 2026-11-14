@@ -1,0 +1,170 @@
+name: Drive'dan Eklenti Aktar
+
+# Sandbox/ajan ağları Drive'a erişemiyor; bu iş akışı dosyaları GitHub
+# runner'ında indirir, APK'ları apk/ klasörüne aktarır ve katalogları üretir.
+on:
+  workflow_dispatch:
+    inputs:
+      klasor:
+        description: "Drive klasör linki"
+        required: true
+        default: "https://drive.google.com/drive/folders/1PN3KBOzVkz9F8nZqlQezWUoVoo5gb7o1"
+      mod:
+        description: "inspect (sadece rapor) | apply (repoya işle)"
+        required: true
+        default: "inspect"
+        type: choice
+        options: [inspect, apply]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: drive-aktar
+  cancel-in-progress: false
+
+jobs:
+  aktar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: gdown kur
+        run: pip install --quiet gdown
+
+      - name: Drive klasörünü indir
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/drive"
+          gdown --folder "${{ inputs.klasor }}" -O "$RUNNER_TEMP/drive" --remaining-ok || true
+          echo "--- indirilen dosyalar ---"
+          find "$RUNNER_TEMP/drive" -type f -printf '%10s  %p\n' | sort -k2 || true
+
+      - name: Zip envanteri (rapor)
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os, zipfile, glob
+          root = os.environ["RUNNER_TEMP"] + "/drive"
+          zips = [p for p in glob.glob(root + "/**/*", recursive=True) if p.lower().endswith(".zip")]
+          print(f"{len(zips)} zip bulundu")
+          for z in zips:
+              with zipfile.ZipFile(z) as zf:
+                  names = zf.namelist()
+                  apks = [n for n in names if n.lower().endswith(".apk")]
+                  print(f"\n=== {os.path.basename(z)}  ({len(names)} girdi, {len(apks)} apk)")
+                  for n in apks:
+                      info = zf.getinfo(n)
+                      print(f"  {info.file_size:>10}  {n}")
+          PY
+
+      - name: APK'ları aktar + katalogları üret
+        if: inputs.mod == 'apply'
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os, re, shutil, subprocess, sys, zipfile, glob, filecmp
+
+          repo = os.getcwd()
+          apk_dir = os.path.join(repo, "apk")
+          drive = os.environ["RUNNER_TEMP"] + "/drive"
+          name_re = re.compile(r"^tachiyomi-(?P<lang>[a-z]{2,3})\.(?P<slug>[a-z0-9]+)-v(?P<ver>\d+\.\d+\.\d+)\.apk$")
+
+          def key(name):
+              m = name_re.match(name)
+              return (m.group("lang"), m.group("slug"), tuple(int(x) for x in m.group("ver").split("."))) if m else None
+
+          zips = [p for p in glob.glob(drive + "/**/*", recursive=True) if p.lower().endswith(".zip")]
+          stage = os.environ["RUNNER_TEMP"] + "/x"
+          os.makedirs(stage, exist_ok=True)
+          for z in zips:
+              try:
+                  with zipfile.ZipFile(z) as zf:
+                      zf.extractall(stage)
+              except Exception as exc:
+                  print(f"! {z} açılamadı: {exc}")
+
+          found = {}   # (lang, slug) -> (version, apk_path, png_path)
+          for dirpath, _dirs, files in os.walk(stage):
+              for f in files:
+                  if f.lower().endswith(".apk"):
+                      m = name_re.match(f)
+                      if not m:
+                          print(f"? desene uymayan apk atlandı: {f}")
+                          continue
+                      pkg = f"eu.kanade.tachiyomi.extension.{m.group('lang')}.{m.group('slug')}"
+                      png = os.path.join(dirpath, pkg + ".png")
+                      ver = tuple(int(x) for x in m.group("ver").split("."))
+                      k = (m.group("lang"), m.group("slug"))
+                      if k not in found or ver > found[k][0]:
+                          found[k] = (ver, os.path.join(dirpath, f), png if os.path.exists(png) else None)
+
+          existing = {}
+          for f in os.listdir(apk_dir):
+              k = key(f)
+              if k:
+                  existing[(k[0], k[1])] = (k[2], f)
+
+          added, updated, same, no_icon = [], [], [], []
+          for k, (ver, apk_path, png) in sorted(found.items()):
+              lang, slug = k
+              ver_s = ".".join(map(str, ver))
+              pkg = f"eu.kanade.tachiyomi.extension.{lang}.{slug}"
+              target = os.path.join(apk_dir, f"tachiyomi-{lang}.{slug}-v{ver_s}.apk")
+              icon_target = os.path.join(apk_dir, pkg + ".png")
+              current = existing.get(k)
+              if current and current[0] >= ver:
+                  same.append((pkg, current[0], ver))
+                  continue
+              shutil.copy2(apk_path, target)
+              if png:
+                  shutil.copy2(png, icon_target)
+              elif not os.path.exists(icon_target):
+                  no_icon.append(pkg)
+              if current:
+                  os.remove(os.path.join(apk_dir, current[1]))
+                  updated.append((pkg, ".".join(map(str, current[0])), ver_s))
+              else:
+                  added.append((pkg, ver_s))
+
+          print("\n===== AKTARIM ÖZETİ =====")
+          print(f"yeni eklenti      : {len(added)}")
+          for p, v in added:
+              print(f"  + {p} {v}")
+          print(f"güncellenen       : {len(updated)}")
+          for p, o, n in updated:
+              print(f"  ↑ {p} {o} -> {n}")
+          print(f"zaten güncel/aynı : {len(same)}")
+          print(f"ikonu bulunamayan : {len(no_icon)}")
+          for p in no_icon:
+              print(f"  ! {p}")
+
+          if "--noop" in sys.argv:
+              sys.exit(0)
+          PY
+
+      - name: Katalog üret
+        if: inputs.mod == 'apply'
+        run: python3 tools/build_catalog.py
+
+      - name: Değişiklikleri gönder
+        if: inputs.mod == 'apply'
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok — Drive içeriği repoyla aynı."
+            exit 0
+          fi
+          git diff --cached --stat
+          git commit -m "chore(drive): Drive'dan güncel eklenti APK'larını aktar + katalogları üret"
+          git push
