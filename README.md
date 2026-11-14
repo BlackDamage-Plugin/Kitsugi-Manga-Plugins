@@ -20,16 +20,16 @@ Kitsugi-Manga-Plugins/
 │       ├── mmrcms/tr/           # MMRCMS tabanlı 1 TR kaynak (MangaDenizi)
 │       └── all/MangaBall.kt     # Çok dilli MangaBall TR ayrıştırıcısı
 │
-└── keiyoushi-extensions-tr/     # ⚡ Keiyoushi / Mihon tabanlı 76 Türkçe Eklenti
+└── keiyoushi-extensions-tr/     # ⚡ Keiyoushi / Mihon tabanlı 81 Türkçe Eklenti
     ├── lib-multisrc/            # Ortak motor kütüphaneleri (UzayManga, Madara, Themesia)
-    └── src/tr/                  # 76 bağımsız eklenti paketi (.apk derlenebilir)
+    └── src/tr/                  # 81 bağımsız eklenti paketi (.apk derlenebilir)
         ├── afroditscans/        # AfroditScans (SvelteKit / UzayManga motoru)
         ├── golgebahcesi/        # Gölge Bahçesi
         ├── mangatr/             # Manga-TR
         ├── tortugaceviri/       # Tortuga Çeviri
         ├── hayalistic/          # Hayalistic
         ├── mangaruhu/           # MangaRuhu
-        └── ... (76 eklenti)
+        └── ... (81 eklenti)
 
 ├── apk/                         # 📦 Derlenmiş eklentiler (APK + ikon)
 ├── builds/                      # 🔁 Depo kökü normalize edildiğinde okunan kopya
@@ -67,6 +67,12 @@ python3 tools/build_catalog.py --check    # sadece denetler (CI: .github/workflo
 Araç `apk/` içindeki her APK için ikon (`.png`) arar, `versionCode`'u sürümden hesaplar
 (`1.6.12 → 106012`), adları korur ve eksik dosya / tutarsızlık varsa uyarır.
 
+### 🔄 Güncel sürümler
+
+\`.github/workflows/upstream-guncelle.yml\` her gün 03:00 UTC'de (veya elle) çalışır:
+Keiyoushi resmi kataloğundan TR eklentilerinin en güncel APK + ikonlarını indirir, `apk/`
+klasörünü günceller, katalogları üretir ve `docs/guncelleme-raporu.md` raporuyla commit eder.
+
 ### ➕ Yeni eklenti ekleme
 
 1. APK'yı `apk/tachiyomi-tr.<paket>-v<sürüm>.apk` adıyla koy (örn. `tachiyomi-tr.sadscans-v1.6.19.apk`).
@@ -77,9 +83,9 @@ Araç gerisini (10 katalog dosyası, `code`, sıralama, URL'ler) kendisi yapar; 
 
 ### ⚠️ Paket içinde bulunmayan kaynaklar
 
-Şu an `apk/` klasöründe 76 eklenti var. Aşağıdaki kaynaklar için **APK/ikon dosyası depoda yok**, bu yüzden kataloğa eklenemiyor (kataloğa eklenseydi uygulamada "indirilemedi" hatası verirdi):
+Şu an `apk/` klasöründe **81** eklenti var (hepsi yayınlanan en güncel sürümde). Aşağıdaki kaynaklar için **APK/ikon dosyası depoda yok**, bu yüzden kataloğa eklenemiyor (kataloğa eklenseydi uygulamada "indirilemedi" hatası verirdi):
 
-`SadScans` · `Initlise-Next` (DuckScans / LunariScans / AiluraScans / Oblivion Scans) · `TürkManga` · `Fenrir Scans`
+`SadScans` · `DuckScans` · `LunariScans` · `AiluraScans` · `Oblivion Scans` · `TürkManga` · `Fenrir Scans`
 
 APK'ları temin edildiğinde yukarıdaki 3 adımlık akışla dakikalar içinde aktif hâle gelir.
 

@@ -73,6 +73,11 @@ NAME_OVERRIDES = {
     "mangaruhu": "Manga Ruhu",
     "mangaship": "Manga Bahçesi",
     "mangatilkisi": "MangaTilkisi",
+    "kazescans": "KazeScans",
+    "mangakulesi": "Manga Kulesi",
+    "mangamac": "MangaMAC",
+    "merlinmanga": "Merlin Manga",
+    "outcatsscans": "Outcats Scans",
     "mangatr": "Manga-TR",
     "mangawow": "MangaWOW",
     "mangawt": "MangaWT",
@@ -178,7 +183,7 @@ def scan() -> list[dict]:
             continue
 
         old = previous.get(pkg, {})
-        name = old.get("name") or NAME_OVERRIDES.get(slug) or slug.capitalize()
+        name = NAME_OVERRIDES.get(slug) or old.get("name") or slug.capitalize()
         code = version_code(version)
         if old.get("version") and old.get("code"):
             old_code = version_code(old["version"])

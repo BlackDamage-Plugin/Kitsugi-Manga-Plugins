@@ -187,7 +187,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.juratempest.png"
   },
   {
-    "name": "Kazescans",
+    "name": "KazeScans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.kazescans",
     "apk": "tachiyomi-tr.kazescans-v1.6.19.apk",
     "lang": "tr",
@@ -286,6 +286,17 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangadiyari.png"
   },
   {
+    "name": "Manga Kulesi",
+    "pkg": "eu.kanade.tachiyomi.extension.tr.mangakulesi",
+    "apk": "tachiyomi-tr.mangakulesi-v1.6.8.apk",
+    "lang": "tr",
+    "code": 106008,
+    "version": "1.6.8",
+    "nsfw": 0,
+    "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangakulesi-v1.6.8.apk",
+    "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangakulesi.png"
+  },
+  {
     "name": "Manga Kusu",
     "pkg": "eu.kanade.tachiyomi.extension.tr.mangakusu",
     "apk": "tachiyomi-tr.mangakusu-v1.6.3.apk",
@@ -363,18 +374,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangadusleri.png"
   },
   {
-    "name": "Mangakulesi",
-    "pkg": "eu.kanade.tachiyomi.extension.tr.mangakulesi",
-    "apk": "tachiyomi-tr.mangakulesi-v1.6.8.apk",
-    "lang": "tr",
-    "code": 106008,
-    "version": "1.6.8",
-    "nsfw": 0,
-    "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangakulesi-v1.6.8.apk",
-    "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangakulesi.png"
-  },
-  {
-    "name": "Mangamac",
+    "name": "MangaMAC",
     "pkg": "eu.kanade.tachiyomi.extension.tr.mangamac",
     "apk": "tachiyomi-tr.mangamac-v1.6.1.apk",
     "lang": "tr",
@@ -429,6 +429,17 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangitto.png"
   },
   {
+    "name": "Merlin Manga",
+    "pkg": "eu.kanade.tachiyomi.extension.tr.merlinmanga",
+    "apk": "tachiyomi-tr.merlinmanga-v1.6.58.apk",
+    "lang": "tr",
+    "code": 106058,
+    "version": "1.6.58",
+    "nsfw": 0,
+    "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.merlinmanga-v1.6.58.apk",
+    "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.merlinmanga.png"
+  },
+  {
     "name": "Merlin Scans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.merlinscans",
     "apk": "tachiyomi-tr.merlinscans-v1.6.10.apk",
@@ -438,17 +449,6 @@
     "nsfw": 0,
     "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.merlinscans-v1.6.10.apk",
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.merlinscans.png"
-  },
-  {
-    "name": "Merlinmanga",
-    "pkg": "eu.kanade.tachiyomi.extension.tr.merlinmanga",
-    "apk": "tachiyomi-tr.merlinmanga-v1.6.58.apk",
-    "lang": "tr",
-    "code": 106058,
-    "version": "1.6.58",
-    "nsfw": 0,
-    "url": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.merlinmanga-v1.6.58.apk",
-    "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.merlinmanga.png"
   },
   {
     "name": "Mikrokosmos Fansub",
@@ -583,7 +583,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.orimanga.png"
   },
   {
-    "name": "Outcatsscans",
+    "name": "Outcats Scans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.outcatsscans",
     "apk": "tachiyomi-tr.outcatsscans-v1.6.59.apk",
     "lang": "tr",
