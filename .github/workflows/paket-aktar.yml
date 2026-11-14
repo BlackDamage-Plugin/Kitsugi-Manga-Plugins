@@ -185,9 +185,18 @@ jobs:
               for i in plan:
                   target = apk_dir / f"tachiyomi-{i['lang']}.{i['slug']}-v{i['ver']}.apk"
                   icon_target = apk_dir / f"{i['pkg']}.png"
-                  # aynı paketin eski sürüm dosyalarını temizle
+                  # aynı paketin mevcut dosyaları
                   old = [p for p in apk_dir.glob(f"tachiyomi-{i['lang']}.{i['slug']}-v*.apk")]
                   old_names = {p.name for p in old}
+                  # sürüm düşürmeyi engelle: repodaki sürüm daha yeniyse dokunma
+                  def vt(s):
+                      try:
+                          return tuple(int(x) for x in s.split("."))
+                      except ValueError:
+                          return (0,)
+                  newer = [(p, vt(re.search(r"-v(\d+\.\d+\.\d+)\.apk$", p.name).group(1))) for p in old]
+                  if any(v > vt(i["ver"]) for _, v in newer):
+                      continue
                   shutil.copy2(i["file"], target)
                   for p in old:
                       if p.name != target.name:

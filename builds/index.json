@@ -11,7 +11,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.afroditscans.png"
   },
   {
-    "name": "Ailurascans",
+    "name": "AiluraScans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.ailurascans",
     "apk": "tachiyomi-tr.ailurascans-v1.6.9.apk",
     "lang": "tr",
@@ -77,7 +77,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.diamondfansub.png"
   },
   {
-    "name": "Duckscans",
+    "name": "DuckScans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.duckscans",
     "apk": "tachiyomi-tr.duckscans-v1.6.9.apk",
     "lang": "tr",
@@ -110,7 +110,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.eskimangalar.png"
   },
   {
-    "name": "Fenrirscans",
+    "name": "Fenrir Scans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.fenrirscans",
     "apk": "tachiyomi-tr.fenrirscans-v1.6.2.apk",
     "lang": "tr",
@@ -297,7 +297,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.lunascans.png"
   },
   {
-    "name": "Lunariscans",
+    "name": "LunariScans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.lunariscans",
     "apk": "tachiyomi-tr.lunariscans-v1.6.9.apk",
     "lang": "tr",
@@ -484,7 +484,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.merlinmanga.png"
   },
   {
-    "name": "Merlin Scans",
+    "name": "MerlinToon",
     "pkg": "eu.kanade.tachiyomi.extension.tr.merlinscans",
     "apk": "tachiyomi-tr.merlinscans-v1.6.12.apk",
     "lang": "tr",
@@ -594,7 +594,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.norascans.png"
   },
   {
-    "name": "Oblivionscans",
+    "name": "Oblivion Scans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.oblivionscans",
     "apk": "tachiyomi-tr.oblivionscans-v1.6.9.apk",
     "lang": "tr",
@@ -704,7 +704,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.ruyamanga.png"
   },
   {
-    "name": "Sadscans",
+    "name": "SadScans",
     "pkg": "eu.kanade.tachiyomi.extension.tr.sadscans",
     "apk": "tachiyomi-tr.sadscans-v1.6.19.apk",
     "lang": "tr",
@@ -880,7 +880,7 @@
     "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.turkcemangaoku.png"
   },
   {
-    "name": "Turkmanga",
+    "name": "TürkManga",
     "pkg": "eu.kanade.tachiyomi.extension.tr.turkmanga",
     "apk": "tachiyomi-tr.turkmanga-v1.6.2.apk",
     "lang": "tr",
