@@ -25,6 +25,24 @@
         ]
       },
       {
+        "name": "Ailurascans",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.ailurascans",
+        "versionName": "1.6.9",
+        "versionCode": "106009",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.ailurascans-v1.6.9.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.ailurascans.png"
+        },
+        "sources": [
+          {
+            "name": "Ailurascans",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
         "name": "Amanga Planet",
         "packageName": "eu.kanade.tachiyomi.extension.tr.amangaplanet",
         "versionName": "1.6.3",
@@ -115,6 +133,24 @@
         ]
       },
       {
+        "name": "Duckscans",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.duckscans",
+        "versionName": "1.6.9",
+        "versionCode": "106009",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.duckscans-v1.6.9.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.duckscans.png"
+        },
+        "sources": [
+          {
+            "name": "Duckscans",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
         "name": "Elder Manga",
         "packageName": "eu.kanade.tachiyomi.extension.tr.eldermanga",
         "versionName": "1.6.10",
@@ -145,6 +181,24 @@
         "sources": [
           {
             "name": "Eski Mangalar",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
+        "name": "Fenrirscans",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.fenrirscans",
+        "versionName": "1.6.2",
+        "versionCode": "106002",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.fenrirscans-v1.6.2.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.fenrirscans.png"
+        },
+        "sources": [
+          {
+            "name": "Fenrirscans",
             "language": "tr",
             "type": "manga"
           }
@@ -333,11 +387,11 @@
       {
         "name": "Koreli Manga",
         "packageName": "eu.kanade.tachiyomi.extension.tr.korelimanga",
-        "versionName": "1.6.9",
-        "versionCode": "106009",
+        "versionName": "1.6.8",
+        "versionCode": "106008",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.korelimanga-v1.6.9.apk",
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.korelimanga-v1.6.8.apk",
           "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.korelimanga.png"
         },
         "sources": [
@@ -439,6 +493,24 @@
         ]
       },
       {
+        "name": "Lunariscans",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.lunariscans",
+        "versionName": "1.6.9",
+        "versionCode": "106009",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.lunariscans-v1.6.9.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.lunariscans.png"
+        },
+        "sources": [
+          {
+            "name": "Lunariscans",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
         "name": "Manga Bahçesi",
         "packageName": "eu.kanade.tachiyomi.extension.tr.mangaship",
         "versionName": "1.6.2",
@@ -531,11 +603,11 @@
       {
         "name": "Manga Ruhu",
         "packageName": "eu.kanade.tachiyomi.extension.tr.mangaruhu",
-        "versionName": "1.6.9",
-        "versionCode": "106009",
+        "versionName": "1.6.8",
+        "versionCode": "106008",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangaruhu-v1.6.9.apk",
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangaruhu-v1.6.8.apk",
           "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangaruhu.png"
         },
         "sources": [
@@ -549,11 +621,11 @@
       {
         "name": "Manga-TR",
         "packageName": "eu.kanade.tachiyomi.extension.tr.mangatr",
-        "versionName": "1.6.25",
-        "versionCode": "106025",
+        "versionName": "1.6.35",
+        "versionCode": "106035",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangatr-v1.6.25.apk",
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangatr-v1.6.35.apk",
           "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangatr.png"
         },
         "sources": [
@@ -693,11 +765,11 @@
       {
         "name": "Mangitto",
         "packageName": "eu.kanade.tachiyomi.extension.tr.mangitto",
-        "versionName": "1.6.2",
-        "versionCode": "106002",
+        "versionName": "1.6.3",
+        "versionCode": "106003",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangitto-v1.6.2.apk",
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangitto-v1.6.3.apk",
           "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangitto.png"
         },
         "sources": [
@@ -729,11 +801,11 @@
       {
         "name": "Merlin Scans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.merlinscans",
-        "versionName": "1.6.10",
-        "versionCode": "106010",
+        "versionName": "1.6.12",
+        "versionCode": "106012",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.merlinscans-v1.6.10.apk",
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.merlinscans-v1.6.12.apk",
           "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.merlinscans.png"
         },
         "sources": [
@@ -907,13 +979,31 @@
         ]
       },
       {
-        "name": "OkuToon",
-        "packageName": "eu.kanade.tachiyomi.extension.tr.okutoon",
-        "versionName": "1.6.2",
-        "versionCode": "106002",
+        "name": "Oblivionscans",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.oblivionscans",
+        "versionName": "1.6.9",
+        "versionCode": "106009",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.okutoon-v1.6.2.apk",
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.oblivionscans-v1.6.9.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.oblivionscans.png"
+        },
+        "sources": [
+          {
+            "name": "Oblivionscans",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
+        "name": "OkuToon",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.okutoon",
+        "versionName": "1.6.11",
+        "versionCode": "106011",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.okutoon-v1.6.11.apk",
           "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.okutoon.png"
         },
         "sources": [
@@ -1063,6 +1153,24 @@
         "sources": [
           {
             "name": "Rüya Manga",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
+        "name": "Sadscans",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.sadscans",
+        "versionName": "1.6.19",
+        "versionCode": "106019",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.sadscans-v1.6.19.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.sadscans.png"
+        },
+        "sources": [
+          {
+            "name": "Sadscans",
             "language": "tr",
             "type": "manga"
           }
@@ -1333,6 +1441,24 @@
         "sources": [
           {
             "name": "Türkçe Manga Oku",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
+        "name": "Turkmanga",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.turkmanga",
+        "versionName": "1.6.2",
+        "versionCode": "106002",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.turkmanga-v1.6.2.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.turkmanga.png"
+        },
+        "sources": [
+          {
+            "name": "Turkmanga",
             "language": "tr",
             "type": "manga"
           }
