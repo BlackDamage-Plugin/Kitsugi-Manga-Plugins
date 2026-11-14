@@ -1,24 +1,11 @@
 {
+  "name": "Kitsugi Türkçe Manga Eklentileri",
+  "badgeLabel": "KİTSUGİ",
+  "contact": {
+    "website": "https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins"
+  },
   "extensionList": {
     "extensions": [
-      {
-        "name": "Gölge Bahçesi",
-        "packageName": "eu.kanade.tachiyomi.extension.tr.golgebahcesi",
-        "versionName": "1.6.1",
-        "versionCode": "106001",
-        "contentWarning": "CONTENT_WARNING_SAFE",
-        "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.golgebahcesi-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.golgebahcesi.png"
-        },
-        "sources": [
-          {
-            "name": "Gölge Bahçesi",
-            "language": "tr",
-            "type": "manga"
-          }
-        ]
-      },
       {
         "name": "Afrodit Scans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.afroditscans",
@@ -26,8 +13,8 @@
         "versionCode": "106037",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.afroditscans-v1.6.37.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.afroditscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.afroditscans-v1.6.37.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.afroditscans.png"
         },
         "sources": [
           {
@@ -44,8 +31,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.amangaplanet-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.amangaplanet.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.amangaplanet-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.amangaplanet.png"
         },
         "sources": [
           {
@@ -62,8 +49,8 @@
         "versionCode": "106055",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.anikiga-v1.6.55.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.anikiga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.anikiga-v1.6.55.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.anikiga.png"
         },
         "sources": [
           {
@@ -80,8 +67,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.araznovel-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.araznovel.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.araznovel-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.araznovel.png"
         },
         "sources": [
           {
@@ -98,8 +85,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.arcurafansub-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.arcurafansub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.arcurafansub-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.arcurafansub.png"
         },
         "sources": [
           {
@@ -116,8 +103,8 @@
         "versionCode": "106057",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.diamondfansub-v1.6.57.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.diamondfansub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.diamondfansub-v1.6.57.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.diamondfansub.png"
         },
         "sources": [
           {
@@ -134,8 +121,8 @@
         "versionCode": "106009",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.eldermanga-v1.6.9.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.eldermanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.eldermanga-v1.6.9.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.eldermanga.png"
         },
         "sources": [
           {
@@ -152,8 +139,8 @@
         "versionCode": "106006",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.eskimangalar-v1.6.6.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.eskimangalar.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.eskimangalar-v1.6.6.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.eskimangalar.png"
         },
         "sources": [
           {
@@ -170,8 +157,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.gafeland-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.gafeland.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.gafeland-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.gafeland.png"
         },
         "sources": [
           {
@@ -188,8 +175,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.gaiatoon-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.gaiatoon.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.gaiatoon-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.gaiatoon.png"
         },
         "sources": [
           {
@@ -206,12 +193,30 @@
         "versionCode": "106056",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.ghosthentai-v1.6.56.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.ghosthentai.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.ghosthentai-v1.6.56.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.ghosthentai.png"
         },
         "sources": [
           {
             "name": "GhosToon",
+            "language": "tr",
+            "type": "manga"
+          }
+        ]
+      },
+      {
+        "name": "Gölge Bahçesi",
+        "packageName": "eu.kanade.tachiyomi.extension.tr.golgebahcesi",
+        "versionName": "1.6.1",
+        "versionCode": "106001",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.golgebahcesi-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.golgebahcesi.png"
+        },
+        "sources": [
+          {
+            "name": "Gölge Bahçesi",
             "language": "tr",
             "type": "manga"
           }
@@ -224,8 +229,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.hattorimanga-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.hattorimanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.hattorimanga-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.hattorimanga.png"
         },
         "sources": [
           {
@@ -242,8 +247,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.hattoriscans-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.hattoriscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.hattoriscans-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.hattoriscans.png"
         },
         "sources": [
           {
@@ -260,8 +265,8 @@
         "versionCode": "106061",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.hayalistic-v1.6.61.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.hayalistic.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.hayalistic-v1.6.61.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.hayalistic.png"
         },
         "sources": [
           {
@@ -278,8 +283,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.holyscans-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.holyscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.holyscans-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.holyscans.png"
         },
         "sources": [
           {
@@ -296,8 +301,8 @@
         "versionCode": "106003",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.juratempest-v1.6.3.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.juratempest.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.juratempest-v1.6.3.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.juratempest.png"
         },
         "sources": [
           {
@@ -314,8 +319,8 @@
         "versionCode": "106003",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.korelimanga-v1.6.3.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.korelimanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.korelimanga-v1.6.3.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.korelimanga.png"
         },
         "sources": [
           {
@@ -332,8 +337,8 @@
         "versionCode": "106020",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.koreliscans-v1.6.20.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.koreliscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.koreliscans-v1.6.20.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.koreliscans.png"
         },
         "sources": [
           {
@@ -350,8 +355,8 @@
         "versionCode": "106061",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.kuroimanga-v1.6.61.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.kuroimanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.kuroimanga-v1.6.61.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.kuroimanga.png"
         },
         "sources": [
           {
@@ -368,8 +373,8 @@
         "versionCode": "106061",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.laviniafansub-v1.6.61.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.laviniafansub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.laviniafansub-v1.6.61.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.laviniafansub.png"
         },
         "sources": [
           {
@@ -386,8 +391,8 @@
         "versionCode": "106006",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.limonmanga-v1.6.6.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.limonmanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.limonmanga-v1.6.6.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.limonmanga.png"
         },
         "sources": [
           {
@@ -404,8 +409,8 @@
         "versionCode": "106058",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.lunascans-v1.6.58.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.lunascans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.lunascans-v1.6.58.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.lunascans.png"
         },
         "sources": [
           {
@@ -422,8 +427,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangaship-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangaship.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangaship-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangaship.png"
         },
         "sources": [
           {
@@ -440,8 +445,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangadiyari-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangadiyari.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangadiyari-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangadiyari.png"
         },
         "sources": [
           {
@@ -458,8 +463,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangakusu-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangakusu.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangakusu-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangakusu.png"
         },
         "sources": [
           {
@@ -476,8 +481,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangaportali-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangaportali.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangaportali-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangaportali.png"
         },
         "sources": [
           {
@@ -494,8 +499,8 @@
         "versionCode": "106003",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangaruhu-v1.6.3.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangaruhu.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangaruhu-v1.6.3.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangaruhu.png"
         },
         "sources": [
           {
@@ -512,8 +517,8 @@
         "versionCode": "106024",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangatr-v1.6.24.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangatr.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangatr-v1.6.24.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangatr.png"
         },
         "sources": [
           {
@@ -530,8 +535,8 @@
         "versionCode": "106002",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangacix-v1.6.2.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangacix.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangacix-v1.6.2.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangacix.png"
         },
         "sources": [
           {
@@ -548,8 +553,8 @@
         "versionCode": "106008",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangadenizi-v1.6.8.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangadenizi.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangadenizi-v1.6.8.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangadenizi.png"
         },
         "sources": [
           {
@@ -566,8 +571,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangadusleri-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangadusleri.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangadusleri-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangadusleri.png"
         },
         "sources": [
           {
@@ -584,8 +589,8 @@
         "versionCode": "106058",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangatilkisi-v1.6.58.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangatilkisi.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangatilkisi-v1.6.58.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangatilkisi.png"
         },
         "sources": [
           {
@@ -602,8 +607,8 @@
         "versionCode": "106055",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangawow-v1.6.55.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangawow.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangawow-v1.6.55.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangawow.png"
         },
         "sources": [
           {
@@ -620,8 +625,8 @@
         "versionCode": "106056",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangawt-v1.6.56.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangawt.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangawt-v1.6.56.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangawt.png"
         },
         "sources": [
           {
@@ -638,8 +643,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mangitto-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mangitto.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mangitto-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mangitto.png"
         },
         "sources": [
           {
@@ -656,8 +661,8 @@
         "versionCode": "106004",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.merlinscans-v1.6.4.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.merlinscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.merlinscans-v1.6.4.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.merlinscans.png"
         },
         "sources": [
           {
@@ -674,8 +679,8 @@
         "versionCode": "106016",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mikrokosmosfansub-v1.6.16.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mikrokosmosfansub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mikrokosmosfansub-v1.6.16.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mikrokosmosfansub.png"
         },
         "sources": [
           {
@@ -692,8 +697,8 @@
         "versionCode": "106058",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.milasub-v1.6.58.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.milasub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.milasub-v1.6.58.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.milasub.png"
         },
         "sources": [
           {
@@ -710,8 +715,8 @@
         "versionCode": "106055",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.mindafansub-v1.6.55.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.mindafansub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.mindafansub-v1.6.55.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.mindafansub.png"
         },
         "sources": [
           {
@@ -728,8 +733,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.monomanga-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.monomanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.monomanga-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.monomanga.png"
         },
         "sources": [
           {
@@ -746,8 +751,8 @@
         "versionCode": "106006",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.moondaisyscans-v1.6.6.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.moondaisyscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.moondaisyscans-v1.6.6.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.moondaisyscans.png"
         },
         "sources": [
           {
@@ -764,8 +769,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.nemesisscans-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.nemesisscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.nemesisscans-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.nemesisscans.png"
         },
         "sources": [
           {
@@ -782,8 +787,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.nirvanamanga-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.nirvanamanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.nirvanamanga-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.nirvanamanga.png"
         },
         "sources": [
           {
@@ -800,8 +805,8 @@
         "versionCode": "106060",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.niverafansub-v1.6.60.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.niverafansub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.niverafansub-v1.6.60.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.niverafansub.png"
         },
         "sources": [
           {
@@ -818,8 +823,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.norascans-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.norascans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.norascans-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.norascans.png"
         },
         "sources": [
           {
@@ -836,8 +841,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.okutoon-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.okutoon.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.okutoon-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.okutoon.png"
         },
         "sources": [
           {
@@ -854,8 +859,8 @@
         "versionCode": "106060",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.opiatoon-v1.6.60.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.opiatoon.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.opiatoon-v1.6.60.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.opiatoon.png"
         },
         "sources": [
           {
@@ -872,8 +877,8 @@
         "versionCode": "106003",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.orimanga-v1.6.3.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.orimanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.orimanga-v1.6.3.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.orimanga.png"
         },
         "sources": [
           {
@@ -890,8 +895,8 @@
         "versionCode": "106003",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.paradoxscans-v1.6.3.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.paradoxscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.paradoxscans-v1.6.3.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.paradoxscans.png"
         },
         "sources": [
           {
@@ -908,8 +913,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.patimanga-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.patimanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.patimanga-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.patimanga.png"
         },
         "sources": [
           {
@@ -926,8 +931,8 @@
         "versionCode": "106003",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.ragnarscans-v1.6.3.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.ragnarscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.ragnarscans-v1.6.3.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.ragnarscans.png"
         },
         "sources": [
           {
@@ -944,8 +949,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.raindropfansub-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.raindropfansub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.raindropfansub-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.raindropfansub.png"
         },
         "sources": [
           {
@@ -962,8 +967,8 @@
         "versionCode": "106060",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.ruyamanga-v1.6.60.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.ruyamanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.ruyamanga-v1.6.60.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.ruyamanga.png"
         },
         "sources": [
           {
@@ -980,8 +985,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.sereinscan-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.sereinscan.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.sereinscan-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.sereinscan.png"
         },
         "sources": [
           {
@@ -998,8 +1003,8 @@
         "versionCode": "106015",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.shadowceviri-v1.6.15.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.shadowceviri.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.shadowceviri-v1.6.15.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.shadowceviri.png"
         },
         "sources": [
           {
@@ -1016,8 +1021,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.shijiescans-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.shijiescans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.shijiescans-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.shijiescans.png"
         },
         "sources": [
           {
@@ -1034,8 +1039,8 @@
         "versionCode": "106004",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.siyahmelek-v1.6.4.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.siyahmelek.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.siyahmelek-v1.6.4.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.siyahmelek.png"
         },
         "sources": [
           {
@@ -1052,8 +1057,8 @@
         "versionCode": "106002",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.sleptmanga-v1.6.2.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.sleptmanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.sleptmanga-v1.6.2.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.sleptmanga.png"
         },
         "sources": [
           {
@@ -1070,8 +1075,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.strayfansub-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.strayfansub.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.strayfansub-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.strayfansub.png"
         },
         "sources": [
           {
@@ -1088,8 +1093,8 @@
         "versionCode": "106058",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.summertoon-v1.6.58.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.summertoon.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.summertoon-v1.6.58.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.summertoon.png"
         },
         "sources": [
           {
@@ -1106,8 +1111,8 @@
         "versionCode": "106056",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.sunsetmanga-v1.6.56.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.sunsetmanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.sunsetmanga-v1.6.56.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.sunsetmanga.png"
         },
         "sources": [
           {
@@ -1124,8 +1129,8 @@
         "versionCode": "106056",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.tarotscans-v1.6.56.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.tarotscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.tarotscans-v1.6.56.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.tarotscans.png"
         },
         "sources": [
           {
@@ -1142,8 +1147,8 @@
         "versionCode": "106008",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.tenshimanga-v1.6.8.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.tenshimanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.tenshimanga-v1.6.8.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.tenshimanga.png"
         },
         "sources": [
           {
@@ -1160,8 +1165,8 @@
         "versionCode": "106058",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.tonizutoon-v1.6.58.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.tonizutoon.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.tonizutoon-v1.6.58.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.tonizutoon.png"
         },
         "sources": [
           {
@@ -1178,8 +1183,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.toontaku-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.toontaku.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.toontaku-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.toontaku.png"
         },
         "sources": [
           {
@@ -1196,8 +1201,8 @@
         "versionCode": "106057",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.tortugaceviri-v1.6.57.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.tortugaceviri.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.tortugaceviri-v1.6.57.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.tortugaceviri.png"
         },
         "sources": [
           {
@@ -1214,8 +1219,8 @@
         "versionCode": "106004",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.trmanga-v1.6.4.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.trmanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.trmanga-v1.6.4.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.trmanga.png"
         },
         "sources": [
           {
@@ -1232,8 +1237,8 @@
         "versionCode": "106056",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.turkcemangaoku-v1.6.56.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.turkcemangaoku.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.turkcemangaoku-v1.6.56.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.turkcemangaoku.png"
         },
         "sources": [
           {
@@ -1250,8 +1255,8 @@
         "versionCode": "106048",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.uzaymanga-v1.6.48.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.uzaymanga.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.uzaymanga-v1.6.48.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.uzaymanga.png"
         },
         "sources": [
           {
@@ -1268,8 +1273,8 @@
         "versionCode": "106062",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.webtoonhatti-v1.6.62.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.webtoonhatti.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.webtoonhatti-v1.6.62.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.webtoonhatti.png"
         },
         "sources": [
           {
@@ -1286,8 +1291,8 @@
         "versionCode": "106055",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.webtoonia-v1.6.55.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.webtoonia.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.webtoonia-v1.6.55.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.webtoonia.png"
         },
         "sources": [
           {
@@ -1304,8 +1309,8 @@
         "versionCode": "106001",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.webtoonoku-v1.6.1.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.webtoonoku.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.webtoonoku-v1.6.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.webtoonoku.png"
         },
         "sources": [
           {
@@ -1322,8 +1327,8 @@
         "versionCode": "106061",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.yaoiflix-v1.6.61.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.yaoiflix.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.yaoiflix-v1.6.61.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.yaoiflix.png"
         },
         "sources": [
           {
@@ -1340,8 +1345,8 @@
         "versionCode": "106056",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.yaoimangaoku-v1.6.56.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.yaoimangaoku.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.yaoimangaoku-v1.6.56.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.yaoimangaoku.png"
         },
         "sources": [
           {
@@ -1358,8 +1363,8 @@
         "versionCode": "106000",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/tachiyomi-tr.zenithscans-v1.6.0.apk",
-          "iconUrl": "https://raw.githubusercontent.com/f26901964-eng/Kitsugi-Manga-Plugins/builds/apk/eu.kanade.tachiyomi.extension.tr.zenithscans.png"
+          "apkUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/tachiyomi-tr.zenithscans-v1.6.0.apk",
+          "iconUrl": "https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/eu.kanade.tachiyomi.extension.tr.zenithscans.png"
         },
         "sources": [
           {
