@@ -146,6 +146,18 @@ def version_code(version: str) -> int:
     return major * 100_000 + minor * 1_000 + patch
 
 
+def load_name_map() -> dict[str, str]:
+    """tools/isimler.json varsa (paket aktarımının APK etiketlerinden ürettiği
+    adlar) NAME_OVERRIDES'tan önce gelir."""
+    path = ROOT / "tools" / "isimler.json"
+    if not path.is_file():
+        return {}
+    try:
+        return {k: v for k, v in json.loads(path.read_text(encoding="utf-8")).items() if isinstance(v, str)}
+    except json.JSONDecodeError:
+        return {}
+
+
 def load_previous() -> dict[str, dict]:
     """Mevcut katalogdan pkg -> kayıt eşlemesi (ad, nsfw, sources korunur)."""
     previous: dict[str, dict] = {}
@@ -172,6 +184,7 @@ def scan() -> list[dict]:
     if not APK_DIR.is_dir():
         sys.exit(f"HATA: {APK_DIR} bulunamadı.")
     previous = load_previous()
+    names = load_name_map()
     entries: list[dict] = []
     problems: list[str] = []
 
@@ -190,7 +203,7 @@ def scan() -> list[dict]:
             continue
 
         old = previous.get(pkg, {})
-        name = NAME_OVERRIDES.get(slug) or old.get("name") or slug.capitalize()
+        name = names.get(slug) or NAME_OVERRIDES.get(slug) or old.get("name") or slug.capitalize()
         code = version_code(version)
         if old.get("version") and old.get("code"):
             old_code = version_code(old["version"])

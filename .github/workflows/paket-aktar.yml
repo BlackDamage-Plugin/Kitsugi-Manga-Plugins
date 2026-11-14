@@ -216,6 +216,22 @@ jobs:
                   else:
                       added.append((i["pkg"], i["ver"]))
 
+          # APK etiketlerinden isim haritası ("Tachiyomi: X" -> "X")
+          if MOD == "uygula":
+              name_file = repo / "tools" / "isimler.json"
+              name_map = {}
+              if name_file.is_file():
+                  try:
+                      name_map = json.loads(name_file.read_text(encoding="utf-8"))
+                  except json.JSONDecodeError:
+                      name_map = {}
+              for i in plan:
+                  label = (i.get("label") or "").replace("Tachiyomi: ", "").strip()
+                  if label:
+                      name_map[i["slug"]] = label
+              name_file.parent.mkdir(parents=True, exist_ok=True)
+              name_file.write_text(json.dumps(dict(sorted(name_map.items())), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
           say("## Sonuç")
           say()
           if MOD != "uygula":
