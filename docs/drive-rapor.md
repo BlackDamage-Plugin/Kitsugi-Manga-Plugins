@@ -1,108 +1,181 @@
 # Drive → Repo Aktarım Raporu
 
-- Tarih: 2026-11-14 22:25 UTC
+- Tarih: 2026-11-14 22:26 UTC
 - Klasör: https://drive.google.com/drive/folders/1PN3KBOzVkz9F8nZqlQezWUoVoo5gb7o1
 - Mod: **apply**
-- Çalışma: https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/actions/runs/43647973950
+- Çalışma: https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/actions/runs/43648038243
 
 ## 1) İndirilen dosyalar
 
-**Hiç dosya inmedi.** gdown çıktısı:
-
-```
-usage: gdown [-h] [-V] [-O OUTPUT] [-q] [--proxy PROXY] [--speed SPEED]
-             [--cookies FILE] [--cookies-from-browser BROWSER] [--no-cookies]
-             [--no-check-certificate] [--continue] [--retries N] [--folder]
-             [--json] [--format FORMAT] [--user-agent USER_AGENT]
-             [--timeout SECONDS]
-             url_or_id
-gdown: error: unrecognized arguments: --remaining-ok
-```
+- `Kitsugi-Manga-Plugins-CleanSource.zip` — 59,325,417 bayt
+- `Kitsugi-Manga-Plugins-FullGitHistory.bundle` — 12,039,863 bayt
+- `Kitsugi-Plugins-Video-CleanSource.zip` — 18,443,128 bayt
+- `Kitsugi-Plugins-Video-FullGitHistory.bundle` — 48,555,252 bayt
 
 ## 2) Zip envanteri
 
+### `Kitsugi-Manga-Plugins-CleanSource.zip` — 2656 girdi, 152 APK
+- apk/tachiyomi-tr.afroditscans-v1.6.37.apk (312,879 bayt)
+- apk/tachiyomi-tr.amangaplanet-v1.6.1.apk (347,021 bayt)
+- apk/tachiyomi-tr.anikiga-v1.6.55.apk (343,280 bayt)
+- apk/tachiyomi-tr.araznovel-v1.6.0.apk (309,363 bayt)
+- apk/tachiyomi-tr.arcurafansub-v1.6.0.apk (310,165 bayt)
+- apk/tachiyomi-tr.diamondfansub-v1.6.57.apk (328,664 bayt)
+- apk/tachiyomi-tr.eldermanga-v1.6.9.apk (285,787 bayt)
+- apk/tachiyomi-tr.eskimangalar-v1.6.6.apk (311,615 bayt)
+- apk/tachiyomi-tr.gafeland-v1.6.0.apk (338,645 bayt)
+- apk/tachiyomi-tr.gaiatoon-v1.6.0.apk (364,594 bayt)
+- apk/tachiyomi-tr.ghosthentai-v1.6.56.apk (365,925 bayt)
+- apk/tachiyomi-tr.golgebahcesi-v1.6.1.apk (342,164 bayt)
+- apk/tachiyomi-tr.hattorimanga-v1.6.0.apk (299,708 bayt)
+- apk/tachiyomi-tr.hattoriscans-v1.6.1.apk (321,219 bayt)
+- apk/tachiyomi-tr.hayalistic-v1.6.61.apk (349,516 bayt)
+- apk/tachiyomi-tr.holyscans-v1.6.0.apk (303,923 bayt)
+- apk/tachiyomi-tr.juratempest-v1.6.3.apk (315,871 bayt)
+- apk/tachiyomi-tr.korelimanga-v1.6.3.apk (409,926 bayt)
+- apk/tachiyomi-tr.koreliscans-v1.6.20.apk (334,785 bayt)
+- apk/tachiyomi-tr.kuroimanga-v1.6.61.apk (373,017 bayt)
+- apk/tachiyomi-tr.laviniafansub-v1.6.61.apk (384,908 bayt)
+- apk/tachiyomi-tr.limonmanga-v1.6.6.apk (321,779 bayt)
+- apk/tachiyomi-tr.lunascans-v1.6.58.apk (383,657 bayt)
+- apk/tachiyomi-tr.mangacix-v1.6.2.apk (298,527 bayt)
+- apk/tachiyomi-tr.mangadenizi-v1.6.8.apk (311,531 bayt)
+- apk/tachiyomi-tr.mangadiyari-v1.6.1.apk (382,192 bayt)
+- apk/tachiyomi-tr.mangadusleri-v1.6.0.apk (301,696 bayt)
+- apk/tachiyomi-tr.mangakusu-v1.6.1.apk (298,801 bayt)
+- apk/tachiyomi-tr.mangaportali-v1.6.1.apk (301,763 bayt)
+- apk/tachiyomi-tr.mangaruhu-v1.6.3.apk (374,582 bayt)
+- apk/tachiyomi-tr.mangaship-v1.6.0.apk (323,367 bayt)
+- apk/tachiyomi-tr.mangatilkisi-v1.6.58.apk (372,064 bayt)
+- apk/tachiyomi-tr.mangatr-v1.6.24.apk (304,707 bayt)
+- apk/tachiyomi-tr.mangawow-v1.6.55.apk (362,476 bayt)
+- apk/tachiyomi-tr.mangawt-v1.6.56.apk (305,107 bayt)
+- apk/tachiyomi-tr.mangitto-v1.6.1.apk (344,603 bayt)
+- apk/tachiyomi-tr.merlinscans-v1.6.4.apk (338,878 bayt)
+- apk/tachiyomi-tr.mikrokosmosfansub-v1.6.16.apk (344,021 bayt)
+- apk/tachiyomi-tr.milasub-v1.6.58.apk (378,000 bayt)
+- apk/tachiyomi-tr.mindafansub-v1.6.55.apk (403,432 bayt)
+- apk/tachiyomi-tr.monomanga-v1.6.0.apk (301,927 bayt)
+- apk/tachiyomi-tr.moondaisyscans-v1.6.6.apk (322,914 bayt)
+- apk/tachiyomi-tr.nemesisscans-v1.6.0.apk (350,777 bayt)
+- apk/tachiyomi-tr.nirvanamanga-v1.6.0.apk (334,625 bayt)
+- apk/tachiyomi-tr.niverafansub-v1.6.60.apk (392,624 bayt)
+- apk/tachiyomi-tr.norascans-v1.6.1.apk (307,487 bayt)
+- apk/tachiyomi-tr.okutoon-v1.6.1.apk (268,887 bayt)
+- apk/tachiyomi-tr.opiatoon-v1.6.60.apk (390,528 bayt)
+- apk/tachiyomi-tr.orimanga-v1.6.3.apk (311,555 bayt)
+- apk/tachiyomi-tr.paradoxscans-v1.6.3.apk (369,990 bayt)
+- apk/tachiyomi-tr.patimanga-v1.6.0.apk (298,433 bayt)
+- apk/tachiyomi-tr.ragnarscans-v1.6.3.apk (334,147 bayt)
+- apk/tachiyomi-tr.raindropfansub-v1.6.0.apk (308,305 bayt)
+- apk/tachiyomi-tr.ruyamanga-v1.6.60.apk (376,948 bayt)
+- apk/tachiyomi-tr.sereinscan-v1.6.0.apk (319,969 bayt)
+- apk/tachiyomi-tr.shadowceviri-v1.6.15.apk (310,865 bayt)
+- apk/tachiyomi-tr.shijiescans-v1.6.1.apk (306,833 bayt)
+- apk/tachiyomi-tr.siyahmelek-v1.6.4.apk (296,910 bayt)
+- apk/tachiyomi-tr.sleptmanga-v1.6.2.apk (341,479 bayt)
+- apk/tachiyomi-tr.strayfansub-v1.6.0.apk (361,154 bayt)
+- apk/tachiyomi-tr.summertoon-v1.6.58.apk (348,989 bayt)
+- apk/tachiyomi-tr.sunsetmanga-v1.6.56.apk (327,603 bayt)
+- apk/tachiyomi-tr.tarotscans-v1.6.56.apk (359,156 bayt)
+- apk/tachiyomi-tr.tenshimanga-v1.6.8.apk (291,399 bayt)
+- apk/tachiyomi-tr.tonizutoon-v1.6.58.apk (326,560 bayt)
+- apk/tachiyomi-tr.toontaku-v1.6.1.apk (335,779 bayt)
+- apk/tachiyomi-tr.tortugaceviri-v1.6.57.apk (366,012 bayt)
+- apk/tachiyomi-tr.trmanga-v1.6.4.apk (291,107 bayt)
+- apk/tachiyomi-tr.turkcemangaoku-v1.6.56.apk (367,969 bayt)
+- apk/tachiyomi-tr.uzaymanga-v1.6.48.apk (271,687 bayt)
+- apk/tachiyomi-tr.webtoonhatti-v1.6.62.apk (351,428 bayt)
+- apk/tachiyomi-tr.webtoonia-v1.6.55.apk (386,460 bayt)
+- apk/tachiyomi-tr.webtoonoku-v1.6.1.apk (269,619 bayt)
+- apk/tachiyomi-tr.yaoiflix-v1.6.61.apk (323,160 bayt)
+- apk/tachiyomi-tr.yaoimangaoku-v1.6.56.apk (360,224 bayt)
+- apk/tachiyomi-tr.zenithscans-v1.6.0.apk (306,793 bayt)
+- builds/apk/tachiyomi-tr.afroditscans-v1.6.37.apk (312,879 bayt)
+- builds/apk/tachiyomi-tr.amangaplanet-v1.6.1.apk (347,021 bayt)
+- builds/apk/tachiyomi-tr.anikiga-v1.6.55.apk (343,280 bayt)
+- builds/apk/tachiyomi-tr.araznovel-v1.6.0.apk (309,363 bayt)
+- builds/apk/tachiyomi-tr.arcurafansub-v1.6.0.apk (310,165 bayt)
+- builds/apk/tachiyomi-tr.diamondfansub-v1.6.57.apk (328,664 bayt)
+- builds/apk/tachiyomi-tr.eldermanga-v1.6.9.apk (285,787 bayt)
+- builds/apk/tachiyomi-tr.eskimangalar-v1.6.6.apk (311,615 bayt)
+- builds/apk/tachiyomi-tr.gafeland-v1.6.0.apk (338,645 bayt)
+- builds/apk/tachiyomi-tr.gaiatoon-v1.6.0.apk (364,594 bayt)
+- builds/apk/tachiyomi-tr.ghosthentai-v1.6.56.apk (365,925 bayt)
+- builds/apk/tachiyomi-tr.golgebahcesi-v1.6.1.apk (342,164 bayt)
+- builds/apk/tachiyomi-tr.hattorimanga-v1.6.0.apk (299,708 bayt)
+- builds/apk/tachiyomi-tr.hattoriscans-v1.6.1.apk (321,219 bayt)
+- builds/apk/tachiyomi-tr.hayalistic-v1.6.61.apk (349,516 bayt)
+- builds/apk/tachiyomi-tr.holyscans-v1.6.0.apk (303,923 bayt)
+- builds/apk/tachiyomi-tr.juratempest-v1.6.3.apk (315,871 bayt)
+- builds/apk/tachiyomi-tr.korelimanga-v1.6.3.apk (409,926 bayt)
+- builds/apk/tachiyomi-tr.koreliscans-v1.6.20.apk (334,785 bayt)
+- builds/apk/tachiyomi-tr.kuroimanga-v1.6.61.apk (373,017 bayt)
+- builds/apk/tachiyomi-tr.laviniafansub-v1.6.61.apk (384,908 bayt)
+- builds/apk/tachiyomi-tr.limonmanga-v1.6.6.apk (321,779 bayt)
+- builds/apk/tachiyomi-tr.lunascans-v1.6.58.apk (383,657 bayt)
+- builds/apk/tachiyomi-tr.mangacix-v1.6.2.apk (298,527 bayt)
+- builds/apk/tachiyomi-tr.mangadenizi-v1.6.8.apk (311,531 bayt)
+- builds/apk/tachiyomi-tr.mangadiyari-v1.6.1.apk (382,192 bayt)
+- builds/apk/tachiyomi-tr.mangadusleri-v1.6.0.apk (301,696 bayt)
+- builds/apk/tachiyomi-tr.mangakusu-v1.6.1.apk (298,801 bayt)
+- builds/apk/tachiyomi-tr.mangaportali-v1.6.1.apk (301,763 bayt)
+- builds/apk/tachiyomi-tr.mangaruhu-v1.6.3.apk (374,582 bayt)
+- builds/apk/tachiyomi-tr.mangaship-v1.6.0.apk (323,367 bayt)
+- builds/apk/tachiyomi-tr.mangatilkisi-v1.6.58.apk (372,064 bayt)
+- builds/apk/tachiyomi-tr.mangatr-v1.6.24.apk (304,707 bayt)
+- builds/apk/tachiyomi-tr.mangawow-v1.6.55.apk (362,476 bayt)
+- builds/apk/tachiyomi-tr.mangawt-v1.6.56.apk (305,107 bayt)
+- builds/apk/tachiyomi-tr.mangitto-v1.6.1.apk (344,603 bayt)
+- builds/apk/tachiyomi-tr.merlinscans-v1.6.4.apk (338,878 bayt)
+- builds/apk/tachiyomi-tr.mikrokosmosfansub-v1.6.16.apk (344,021 bayt)
+- builds/apk/tachiyomi-tr.milasub-v1.6.58.apk (378,000 bayt)
+- builds/apk/tachiyomi-tr.mindafansub-v1.6.55.apk (403,432 bayt)
+- builds/apk/tachiyomi-tr.monomanga-v1.6.0.apk (301,927 bayt)
+- builds/apk/tachiyomi-tr.moondaisyscans-v1.6.6.apk (322,914 bayt)
+- builds/apk/tachiyomi-tr.nemesisscans-v1.6.0.apk (350,777 bayt)
+- builds/apk/tachiyomi-tr.nirvanamanga-v1.6.0.apk (334,625 bayt)
+- builds/apk/tachiyomi-tr.niverafansub-v1.6.60.apk (392,624 bayt)
+- builds/apk/tachiyomi-tr.norascans-v1.6.1.apk (307,487 bayt)
+- builds/apk/tachiyomi-tr.okutoon-v1.6.1.apk (268,887 bayt)
+- builds/apk/tachiyomi-tr.opiatoon-v1.6.60.apk (390,528 bayt)
+- builds/apk/tachiyomi-tr.orimanga-v1.6.3.apk (311,555 bayt)
+- builds/apk/tachiyomi-tr.paradoxscans-v1.6.3.apk (369,990 bayt)
+- builds/apk/tachiyomi-tr.patimanga-v1.6.0.apk (298,433 bayt)
+- builds/apk/tachiyomi-tr.ragnarscans-v1.6.3.apk (334,147 bayt)
+- builds/apk/tachiyomi-tr.raindropfansub-v1.6.0.apk (308,305 bayt)
+- builds/apk/tachiyomi-tr.ruyamanga-v1.6.60.apk (376,948 bayt)
+- builds/apk/tachiyomi-tr.sereinscan-v1.6.0.apk (319,969 bayt)
+- builds/apk/tachiyomi-tr.shadowceviri-v1.6.15.apk (310,865 bayt)
+- builds/apk/tachiyomi-tr.shijiescans-v1.6.1.apk (306,833 bayt)
+- builds/apk/tachiyomi-tr.siyahmelek-v1.6.4.apk (296,910 bayt)
+- builds/apk/tachiyomi-tr.sleptmanga-v1.6.2.apk (341,479 bayt)
+- builds/apk/tachiyomi-tr.strayfansub-v1.6.0.apk (361,154 bayt)
+- builds/apk/tachiyomi-tr.summertoon-v1.6.58.apk (348,989 bayt)
+- builds/apk/tachiyomi-tr.sunsetmanga-v1.6.56.apk (327,603 bayt)
+- builds/apk/tachiyomi-tr.tarotscans-v1.6.56.apk (359,156 bayt)
+- builds/apk/tachiyomi-tr.tenshimanga-v1.6.8.apk (291,399 bayt)
+- builds/apk/tachiyomi-tr.tonizutoon-v1.6.58.apk (326,560 bayt)
+- builds/apk/tachiyomi-tr.toontaku-v1.6.1.apk (335,779 bayt)
+- builds/apk/tachiyomi-tr.tortugaceviri-v1.6.57.apk (366,012 bayt)
+- builds/apk/tachiyomi-tr.trmanga-v1.6.4.apk (291,107 bayt)
+- builds/apk/tachiyomi-tr.turkcemangaoku-v1.6.56.apk (367,969 bayt)
+- builds/apk/tachiyomi-tr.uzaymanga-v1.6.48.apk (271,687 bayt)
+- builds/apk/tachiyomi-tr.webtoonhatti-v1.6.62.apk (351,428 bayt)
+- builds/apk/tachiyomi-tr.webtoonia-v1.6.55.apk (386,460 bayt)
+- builds/apk/tachiyomi-tr.webtoonoku-v1.6.1.apk (269,619 bayt)
+- builds/apk/tachiyomi-tr.yaoiflix-v1.6.61.apk (323,160 bayt)
+- builds/apk/tachiyomi-tr.yaoimangaoku-v1.6.56.apk (360,224 bayt)
+- builds/apk/tachiyomi-tr.zenithscans-v1.6.0.apk (306,793 bayt)
+
+### `Kitsugi-Plugins-Video-CleanSource.zip` — 2254 girdi, 0 APK
+
 ## 3) Karşılaştırma / aktarım
 
-- Drive'da bulunan eklenti: **0**
+- Drive'da bulunan eklenti: **76**
 - Repoda mevcut eklenti: **76**
 - Yeni eklenecek: **0**
 - Güncellenecek: **0**
-- Drive'daki sürüm daha eski/aynı (dokunulmadı): **0**
-- Yalnızca repoda olan (Drive'da APK yok): **76**
-  - `eu.kanade.tachiyomi.extension.tr.nirvanamanga` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.shijiescans` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.mangaship` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.tarotscans` 1.6.56
-  - `eu.kanade.tachiyomi.extension.tr.webtoonhatti` 1.6.62
-  - `eu.kanade.tachiyomi.extension.tr.uzaymanga` 1.6.48
-  - `eu.kanade.tachiyomi.extension.tr.kuroimanga` 1.6.61
-  - `eu.kanade.tachiyomi.extension.tr.diamondfansub` 1.6.57
-  - `eu.kanade.tachiyomi.extension.tr.strayfansub` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.mangawow` 1.6.55
-  - `eu.kanade.tachiyomi.extension.tr.mangadenizi` 1.6.8
-  - `eu.kanade.tachiyomi.extension.tr.amangaplanet` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.tenshimanga` 1.6.8
-  - `eu.kanade.tachiyomi.extension.tr.hattoriscans` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.mangatr` 1.6.24
-  - `eu.kanade.tachiyomi.extension.tr.golgebahcesi` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.sunsetmanga` 1.6.56
-  - `eu.kanade.tachiyomi.extension.tr.laviniafansub` 1.6.61
-  - `eu.kanade.tachiyomi.extension.tr.tortugaceviri` 1.6.57
-  - `eu.kanade.tachiyomi.extension.tr.koreliscans` 1.6.20
-  - `eu.kanade.tachiyomi.extension.tr.ruyamanga` 1.6.60
-  - `eu.kanade.tachiyomi.extension.tr.summertoon` 1.6.58
-  - `eu.kanade.tachiyomi.extension.tr.zenithscans` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.toontaku` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.mangaportali` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.arcurafansub` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.sleptmanga` 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.anikiga` 1.6.55
-  - `eu.kanade.tachiyomi.extension.tr.lunascans` 1.6.58
-  - `eu.kanade.tachiyomi.extension.tr.mangadiyari` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.afroditscans` 1.6.37
-  - `eu.kanade.tachiyomi.extension.tr.orimanga` 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.webtoonia` 1.6.55
-  - `eu.kanade.tachiyomi.extension.tr.nemesisscans` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.opiatoon` 1.6.60
-  - `eu.kanade.tachiyomi.extension.tr.hayalistic` 1.6.61
-  - `eu.kanade.tachiyomi.extension.tr.turkcemangaoku` 1.6.56
-  - `eu.kanade.tachiyomi.extension.tr.mangaruhu` 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.ragnarscans` 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.milasub` 1.6.58
-  - `eu.kanade.tachiyomi.extension.tr.merlinscans` 1.6.4
-  - `eu.kanade.tachiyomi.extension.tr.limonmanga` 1.6.6
-  - `eu.kanade.tachiyomi.extension.tr.okutoon` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.mangawt` 1.6.56
-  - `eu.kanade.tachiyomi.extension.tr.mangitto` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.tonizutoon` 1.6.58
-  - `eu.kanade.tachiyomi.extension.tr.sereinscan` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.monomanga` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.juratempest` 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.mikrokosmosfansub` 1.6.16
-  - `eu.kanade.tachiyomi.extension.tr.eldermanga` 1.6.9
-  - `eu.kanade.tachiyomi.extension.tr.korelimanga` 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.ghosthentai` 1.6.56
-  - `eu.kanade.tachiyomi.extension.tr.raindropfansub` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.holyscans` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.webtoonoku` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.mangacix` 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.araznovel` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.trmanga` 1.6.4
-  - `eu.kanade.tachiyomi.extension.tr.patimanga` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.gafeland` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.moondaisyscans` 1.6.6
-  - `eu.kanade.tachiyomi.extension.tr.hattorimanga` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.gaiatoon` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.shadowceviri` 1.6.15
-  - `eu.kanade.tachiyomi.extension.tr.niverafansub` 1.6.60
-  - `eu.kanade.tachiyomi.extension.tr.mangadusleri` 1.6.0
-  - `eu.kanade.tachiyomi.extension.tr.eskimangalar` 1.6.6
-  - `eu.kanade.tachiyomi.extension.tr.mindafansub` 1.6.55
-  - `eu.kanade.tachiyomi.extension.tr.norascans` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.paradoxscans` 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.siyahmelek` 1.6.4
-  - `eu.kanade.tachiyomi.extension.tr.yaoimangaoku` 1.6.56
-  - `eu.kanade.tachiyomi.extension.tr.mangakusu` 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.yaoiflix` 1.6.61
-  - `eu.kanade.tachiyomi.extension.tr.mangatilkisi` 1.6.58
+- Drive'daki sürüm daha eski/aynı (dokunulmadı): **76**
+- Yalnızca repoda olan (Drive'da APK yok): **0**
 
