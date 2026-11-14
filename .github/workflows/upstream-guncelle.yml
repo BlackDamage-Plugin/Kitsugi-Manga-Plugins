@@ -153,8 +153,11 @@ jobs:
           out()
           out(f"İkon indirilen: {icons}" if MOD == "uygula" else "")
 
-          (repo / "docs").mkdir(exist_ok=True)
-          (repo / "docs" / "guncelleme-raporu.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          # yalnızca bir değişiklik/başarısızlık varsa raporu yaz: günlük
+          # çalışmada gereksiz commit oluşmasın
+          if MOD != "uygula" or new or upd or failed:
+              (repo / "docs").mkdir(exist_ok=True)
+              (repo / "docs" / "guncelleme-raporu.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
           PY
 
       - name: Katalog üret
