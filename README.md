@@ -20,16 +20,16 @@ Kitsugi-Manga-Plugins/
 │       ├── mmrcms/tr/           # MMRCMS tabanlı 1 TR kaynak (MangaDenizi)
 │       └── all/MangaBall.kt     # Çok dilli MangaBall TR ayrıştırıcısı
 │
-└── keiyoushi-extensions-tr/     # ⚡ Keiyoushi / Mihon tabanlı 81 Türkçe Eklenti
+└── keiyoushi-extensions-tr/     # ⚡ Keiyoushi / Mihon tabanlı 88 Türkçe Eklenti
     ├── lib-multisrc/            # Ortak motor kütüphaneleri (UzayManga, Madara, Themesia)
-    └── src/tr/                  # 81 bağımsız eklenti paketi (.apk derlenebilir)
+    └── src/tr/                  # 88 bağımsız eklenti paketi (.apk derlenebilir)
         ├── afroditscans/        # AfroditScans (SvelteKit / UzayManga motoru)
         ├── golgebahcesi/        # Gölge Bahçesi
         ├── mangatr/             # Manga-TR
         ├── tortugaceviri/       # Tortuga Çeviri
         ├── hayalistic/          # Hayalistic
         ├── mangaruhu/           # MangaRuhu
-        └── ... (81 eklenti)
+        └── ... (88 eklenti)
 
 ├── apk/                         # 📦 Derlenmiş eklentiler (APK + ikon)
 ├── builds/                      # 🔁 Depo kökü normalize edildiğinde okunan kopya
@@ -81,13 +81,15 @@ klasörünü günceller, katalogları üretir ve `docs/guncelleme-raporu.md` rap
 
 Araç gerisini (10 katalog dosyası, `code`, sıralama, URL'ler) kendisi yapar; elle JSON düzenlemeye gerek yok.
 
-### ⚠️ Paket içinde bulunmayan kaynaklar
+### 📲 Uygulamada aktif hâle getirme
 
-Şu an `apk/` klasöründe **81** eklenti var (hepsi yayınlanan en güncel sürümde). Aşağıdaki kaynaklar için **APK/ikon dosyası depoda yok**, bu yüzden kataloğa eklenemiyor (kataloğa eklenseydi uygulamada "indirilemedi" hatası verirdi):
-
-`SadScans` · `DuckScans` · `LunariScans` · `AiluraScans` · `Oblivion Scans` · `TürkManga` · `Fenrir Scans`
-
-APK'ları temin edildiğinde yukarıdaki 3 adımlık akışla dakikalar içinde aktif hâle gelir.
+1. **Depo ekle:** Ayarlar → Eklenti depoları → şu adresi ekle
+   `https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/index.min.json`
+   (depo kökü de kabul edilir: `https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins`)
+2. **Yenile:** Depoyu yenile → 88 eklenti listelenir (SadScans, DuckScans, LunariScans, AiluraScans, Oblivion Scans, TürkManga, Fenrir Scans dahil).
+3. **Güven + kur:** Her eklenti için "güven" onayı ver, sonra kur.
+4. **İmza notu:** Eski (farklı anahtarla imzalanmış) bir sürüm kuruluysa güncelleme "imza uyuşmuyor" diyebilir → o eklentiyi kaldır, yeniden kur. Kitaplık/okuma geçmişi silinmez.
+5. **`builds` dalı:** Uygulama depo kökünü `builds/index.json`'a normalize ediyorsa, `builds` dalının da güncel olması gerekir (main → builds PR'ı).
 
 ---
 

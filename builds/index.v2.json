@@ -25,7 +25,7 @@
         ]
       },
       {
-        "name": "Ailurascans",
+        "name": "AiluraScans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.ailurascans",
         "versionName": "1.6.9",
         "versionCode": "106009",
@@ -133,7 +133,7 @@
         ]
       },
       {
-        "name": "Duckscans",
+        "name": "DuckScans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.duckscans",
         "versionName": "1.6.9",
         "versionCode": "106009",
@@ -187,7 +187,7 @@
         ]
       },
       {
-        "name": "Fenrirscans",
+        "name": "Fenrir Scans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.fenrirscans",
         "versionName": "1.6.2",
         "versionCode": "106002",
@@ -493,7 +493,7 @@
         ]
       },
       {
-        "name": "Lunariscans",
+        "name": "LunariScans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.lunariscans",
         "versionName": "1.6.9",
         "versionCode": "106009",
@@ -799,7 +799,7 @@
         ]
       },
       {
-        "name": "Merlin Scans",
+        "name": "MerlinToon",
         "packageName": "eu.kanade.tachiyomi.extension.tr.merlinscans",
         "versionName": "1.6.12",
         "versionCode": "106012",
@@ -979,7 +979,7 @@
         ]
       },
       {
-        "name": "Oblivionscans",
+        "name": "Oblivion Scans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.oblivionscans",
         "versionName": "1.6.9",
         "versionCode": "106009",
@@ -1159,7 +1159,7 @@
         ]
       },
       {
-        "name": "Sadscans",
+        "name": "SadScans",
         "packageName": "eu.kanade.tachiyomi.extension.tr.sadscans",
         "versionName": "1.6.19",
         "versionCode": "106019",
@@ -1447,7 +1447,7 @@
         ]
       },
       {
-        "name": "Turkmanga",
+        "name": "TürkManga",
         "packageName": "eu.kanade.tachiyomi.extension.tr.turkmanga",
         "versionName": "1.6.2",
         "versionCode": "106002",
