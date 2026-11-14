@@ -1,0 +1,190 @@
+name: Bundle'dan Eksik Eklentileri Kurtar
+
+# Drive'daki "FullGitHistory.bundle" dosyası reponun tüm geçmişini taşır.
+# Bu iş akışı bundle'ı açar, geçmişte var olmuş TÜM apk/png dosyalarını listeler,
+# repoda artık bulunmayanları (SadScans, Initlise-Next ailesi vb.) en son
+# hâlleriyle kurtarıp apk/ klasörüne ekler ve katalogları üretir.
+on:
+  workflow_dispatch:
+    inputs:
+      mod:
+        description: "kesif (sadece envanter) | uygula (kurtar + commit)"
+        required: true
+        default: "kesif"
+        type: choice
+        options: [kesif, uygula]
+      klasor:
+        description: "Drive klasör linki"
+        required: true
+        default: "https://drive.google.com/drive/folders/1PN3KBOzVkz9F8nZqlQezWUoVoo5gb7o1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bundle-kurtar
+  cancel-in-progress: false
+
+jobs:
+  kurtar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: gdown kur
+        run: pip install --quiet gdown
+
+      - name: Drive klasörünü indir
+        run: |
+          mkdir -p "$RUNNER_TEMP/drive"
+          gdown --folder "${{ inputs.klasor }}" -O "$RUNNER_TEMP/drive" > "$RUNNER_TEMP/gdown.log" 2>&1 || tail -20 "$RUNNER_TEMP/gdown.log"
+          find "$RUNNER_TEMP/drive" -type f -printf '%10s  %p\n' | sort -k2
+
+      - name: Bundle'ları aç + envanter + kurtarma + rapor
+        env:
+          MOD: ${{ inputs.mod }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python3 - <<'PY'
+          import os, subprocess, json, glob, pathlib, re, datetime
+
+          MOD = os.environ["MOD"]
+          repo = pathlib.Path.cwd()
+          apk_dir = repo / "apk"
+          tmp = pathlib.Path(os.environ["RUNNER_TEMP"])
+          name_re = re.compile(r"^tachiyomi-(?P<lang>[a-z]{2,3})\.(?P<slug>[a-z0-9]+)-v(?P<ver>\d+\.\d+\.\d+)\.apk$")
+
+          def git(d, *args, binary=False):
+              return subprocess.run(["git", "-C", str(d)] + list(args),
+                                    capture_output=True, text=not binary)
+
+          bundles = [p for p in glob.glob(str(tmp / "drive" / "**" / "*"), recursive=True) if p.endswith(".bundle")]
+
+          lines = []
+          def out(s=""):
+              print(s); lines.append(s)
+
+          out("# Bundle Gelemişi Envanteri")
+          out()
+          out(f"- Tarih: {datetime.datetime.utcnow():%Y-%m-%d %H:%M} UTC")
+          out(f"- Mod: **{MOD}**")
+          out(f"- Çalışma: {os.environ.get('RUN_URL','')}")
+          out()
+
+          repos = []
+          for i, b in enumerate(bundles):
+              d = tmp / f"hist{i}"
+              d.mkdir(parents=True, exist_ok=True)
+              out(f"## Bundle: `{os.path.basename(b)}` ({os.path.getsize(b):,} bayt)")
+              out()
+              heads = git(d, "bundle", "list-heads", b)
+              if heads.returncode != 0:
+                  out("```\n" + (heads.stderr or "")[:800] + "\n```"); out(); continue
+              out("<details><summary>ref'ler</summary>\n\n```\n" + heads.stdout.strip() + "\n```\n\n</details>")
+              out()
+              git(d, "init", "--quiet", "--bare")
+              fetch = git(d, "fetch", "--quiet", b, "+refs/*:refs/*")
+              if fetch.returncode != 0:
+                  fetch = git(d, "fetch", "--quiet", b, "HEAD")
+              if fetch.returncode != 0:
+                  out(f"fetch hatası: `{fetch.stderr.strip()[:300]}`"); out(); continue
+              repos.append(d)
+
+          # geçmişteki tüm apk/png dosyaları (basename -> son içerik)
+          history = {}
+          for d in repos:
+              listing = git(d, "rev-list", "--objects", "--all")
+              if listing.returncode != 0:
+                  continue
+              paths = []
+              for line in listing.stdout.splitlines():
+                  parts = line.split(maxsplit=1)
+                  if len(parts) == 2 and parts[1].lower().endswith((".apk", ".png")):
+                      paths.append(parts[1])
+              for path in paths:
+                  base = os.path.basename(path)
+                  if base in history:
+                      continue
+                  log = git(d, "log", "-1", "--format=%H|%ct", "--all", "--", path)
+                  if log.returncode != 0 or not log.stdout.strip():
+                      continue
+                  commit, ts = log.stdout.strip().split("|")
+                  history[base] = (d, path, commit, int(ts))
+
+          apks_hist = {k: v for k, v in history.items() if k.lower().endswith(".apk")}
+          out(f"Geçmişte bulunan tekil APK sayısı: **{len(apks_hist)}**")
+          out()
+
+          current = {p.name for p in apk_dir.glob("*.apk")}
+          missing = {k: v for k, v in apks_hist.items() if k not in current}
+
+          out("## Geçmişte olup repoda olmayan APK'lar")
+          out()
+          if missing:
+              for base in sorted(missing):
+                  d, path, commit, ts = missing[base]
+                  when = datetime.datetime.utcfromtimestamp(ts).strftime("%Y-%m-%d")
+                  out(f"- `{base}` — son değişim {when} — yol `{path}`")
+          else:
+              out("_yok_")
+          out()
+
+          rescued, skipped = [], []
+          if MOD == "uygula":
+              for base, (d, path, commit, _ts) in sorted(missing.items()):
+                  m = name_re.match(base)
+                  if not m:
+                      skipped.append(base)
+                      continue
+                  blob = git(d, "show", f"{commit}:{path}", binary=True)
+                  if blob.returncode != 0 or not blob.stdout:
+                      skipped.append(base)
+                      continue
+                  (apk_dir / base).write_bytes(blob.stdout)
+                  pkg = f"eu.kanade.tachiyomi.extension.{m.group('lang')}.{m.group('slug')}"
+                  icon_path = os.path.join(os.path.dirname(path), pkg + ".png")
+                  icon = git(d, "show", f"{commit}:{icon_path}", binary=True)
+                  if icon.returncode == 0 and icon.stdout:
+                      (apk_dir / f"{pkg}.png").write_bytes(icon.stdout)
+                  rescued.append(base)
+
+          out("## Kurtarma")
+          out()
+          if MOD != "uygula":
+              out("_keşif modu — dosya yazılmadı._")
+          else:
+              out(f"- Kurtarılan: **{len(rescued)}**")
+              for b in rescued:
+                  out(f"  - `{b}`")
+              out(f"- Desene uymadığı için atlanan: **{len(skipped)}**")
+              for b in skipped:
+                  out(f"  - `{b}`")
+          out()
+
+          (repo / "docs").mkdir(exist_ok=True)
+          (repo / "docs" / "bundle-envanteri.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+
+      - name: Katalog üret
+        if: inputs.mod == 'uygula'
+        run: python3 tools/build_catalog.py
+
+      - name: Değişiklikleri gönder
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok."
+            exit 0
+          fi
+          git diff --cached --stat | tail -20
+          git commit -m "chore(bundle): geçmişten eksik eklentileri kurtar (mod: ${{ inputs.mod }})"
+          git push
