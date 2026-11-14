@@ -1,96 +1,23 @@
 # Upstream Güncelleme Raporu
 
-- Tarih: 2026-11-14 22:27 UTC
+- Tarih: 2026-11-14 22:28 UTC
 - Mod: **uygula**
-- Çalışma: https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/actions/runs/43648167425
+- Çalışma: https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/actions/runs/43648303916
 - Upstream katalog: 1604 eklenti / 81 TR
 
 ## Sonuç
 
-- **Yeni eklenen:** 3
-  - `eu.kanade.tachiyomi.extension.tr.kazescans` 1.6.19
-  - `eu.kanade.tachiyomi.extension.tr.mangakulesi` 1.6.8
-  - `eu.kanade.tachiyomi.extension.tr.merlinmanga` 1.6.58
-- **Güncellenen:** 70
-  - `eu.kanade.tachiyomi.extension.tr.afroditscans` 1.6.37 → 1.6.38
-  - `eu.kanade.tachiyomi.extension.tr.amangaplanet` 1.6.1 → 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.anikiga` 1.6.55 → 1.6.58
-  - `eu.kanade.tachiyomi.extension.tr.araznovel` 1.6.0 → 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.diamondfansub` 1.6.57 → 1.6.60
-  - `eu.kanade.tachiyomi.extension.tr.eldermanga` 1.6.9 → 1.6.10
-  - `eu.kanade.tachiyomi.extension.tr.gaiatoon` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.ghosthentai` 1.6.56 → 1.6.59
-  - `eu.kanade.tachiyomi.extension.tr.golgebahcesi` 1.6.1 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.hattorimanga` 1.6.0 → 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.hattoriscans` 1.6.1 → 1.6.4
-  - `eu.kanade.tachiyomi.extension.tr.hayalistic` 1.6.61 → 1.6.64
-  - `eu.kanade.tachiyomi.extension.tr.juratempest` 1.6.3 → 1.6.4
-  - `eu.kanade.tachiyomi.extension.tr.korelimanga` 1.6.3 → 1.6.9
-  - `eu.kanade.tachiyomi.extension.tr.koreliscans` 1.6.20 → 1.6.22
-  - `eu.kanade.tachiyomi.extension.tr.laviniafansub` 1.6.61 → 1.6.64
-  - `eu.kanade.tachiyomi.extension.tr.limonmanga` 1.6.6 → 1.6.7
-  - `eu.kanade.tachiyomi.extension.tr.lunascans` 1.6.58 → 1.6.62
-  - `eu.kanade.tachiyomi.extension.tr.mangaship` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.mangadiyari` 1.6.1 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.mangakusu` 1.6.1 → 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.mangaportali` 1.6.1 → 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.mangaruhu` 1.6.3 → 1.6.9
-  - `eu.kanade.tachiyomi.extension.tr.mangatr` 1.6.24 → 1.6.25
-  - `eu.kanade.tachiyomi.extension.tr.mangadenizi` 1.6.8 → 1.6.9
-  - `eu.kanade.tachiyomi.extension.tr.mangatilkisi` 1.6.58 → 1.6.62
-  - `eu.kanade.tachiyomi.extension.tr.mangawow` 1.6.55 → 1.6.58
-  - `eu.kanade.tachiyomi.extension.tr.mangawt` 1.6.56 → 1.6.57
-  - `eu.kanade.tachiyomi.extension.tr.mangacix` 1.6.2 → 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.mangadusleri` 1.6.0 → 1.6.1
-  - `eu.kanade.tachiyomi.extension.tr.mangitto` 1.6.1 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.merlinscans` 1.6.4 → 1.6.10
-  - `eu.kanade.tachiyomi.extension.tr.mikrokosmosfansub` 1.6.16 → 1.6.18
-  - `eu.kanade.tachiyomi.extension.tr.mindafansub` 1.6.55 → 1.6.59
-  - `eu.kanade.tachiyomi.extension.tr.monomanga` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.moondaisyscans` 1.6.6 → 1.6.8
-  - `eu.kanade.tachiyomi.extension.tr.nemesisscans` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.nirvanamanga` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.niverafansub` 1.6.60 → 1.6.63
-  - `eu.kanade.tachiyomi.extension.tr.okutoon` 1.6.1 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.opiatoon` 1.6.60 → 1.6.63
-  - `eu.kanade.tachiyomi.extension.tr.orimanga` 1.6.3 → 1.6.9
-  - `eu.kanade.tachiyomi.extension.tr.paradoxscans` 1.6.3 → 1.6.9
-  - `eu.kanade.tachiyomi.extension.tr.patimanga` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.ragnarscans` 1.6.3 → 1.6.9
-  - `eu.kanade.tachiyomi.extension.tr.raindropfansub` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.ruyamanga` 1.6.60 → 1.6.63
-  - `eu.kanade.tachiyomi.extension.tr.sereinscan` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.shadowceviri` 1.6.15 → 1.6.19
-  - `eu.kanade.tachiyomi.extension.tr.shijiescans` 1.6.1 → 1.6.3
-  - `eu.kanade.tachiyomi.extension.tr.siyahmelek` 1.6.4 → 1.6.10
-  - `eu.kanade.tachiyomi.extension.tr.sleptmanga` 1.6.2 → 1.6.4
-  - `eu.kanade.tachiyomi.extension.tr.strayfansub` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.summertoon` 1.6.58 → 1.6.61
-  - `eu.kanade.tachiyomi.extension.tr.sunsetmanga` 1.6.56 → 1.6.57
-  - `eu.kanade.tachiyomi.extension.tr.tarotscans` 1.6.56 → 1.6.59
-  - `eu.kanade.tachiyomi.extension.tr.tenshimanga` 1.6.8 → 1.6.9
-  - `eu.kanade.tachiyomi.extension.tr.tonizutoon` 1.6.58 → 1.6.61
-  - `eu.kanade.tachiyomi.extension.tr.toontaku` 1.6.1 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.tortugaceviri` 1.6.57 → 1.6.60
-  - `eu.kanade.tachiyomi.extension.tr.trmanga` 1.6.4 → 1.6.5
-  - `eu.kanade.tachiyomi.extension.tr.turkcemangaoku` 1.6.56 → 1.6.59
-  - `eu.kanade.tachiyomi.extension.tr.uzaymanga` 1.6.48 → 1.6.49
-  - `eu.kanade.tachiyomi.extension.tr.webtoonhatti` 1.6.62 → 1.6.65
-  - `eu.kanade.tachiyomi.extension.tr.webtoonoku` 1.6.1 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.webtoonia` 1.6.55 → 1.6.58
-  - `eu.kanade.tachiyomi.extension.tr.yaoiflix` 1.6.61 → 1.6.64
-  - `eu.kanade.tachiyomi.extension.tr.yaoimangaoku` 1.6.56 → 1.6.59
-  - `eu.kanade.tachiyomi.extension.tr.zenithscans` 1.6.0 → 1.6.2
-  - `eu.kanade.tachiyomi.extension.tr.gafeland` 1.6.0 → 1.6.2
-- Zaten güncel: **0**
-- İndirilemeyen: **8**
-  - `eu.kanade.tachiyomi.extension.tr.arcurafansub` 1.6.2: HTTP Error 403: Forbidden
-  - `eu.kanade.tachiyomi.extension.tr.eskimangalar` 1.6.7: HTTP Error 403: Forbidden
-  - `eu.kanade.tachiyomi.extension.tr.holyscans` 1.6.1: HTTP Error 403: Forbidden
-  - `eu.kanade.tachiyomi.extension.tr.kuroimanga` 1.6.65: HTTP Error 403: Forbidden
-  - `eu.kanade.tachiyomi.extension.tr.mangamac` 1.6.1: HTTP Error 403: Forbidden
-  - `eu.kanade.tachiyomi.extension.tr.milasub` 1.6.61: HTTP Error 403: Forbidden
-  - `eu.kanade.tachiyomi.extension.tr.norascans` 1.6.2: HTTP Error 403: Forbidden
-  - `eu.kanade.tachiyomi.extension.tr.outcatsscans` 1.6.59: HTTP Error 403: Forbidden
+- **Yeni eklenen:** 2
+  - `eu.kanade.tachiyomi.extension.tr.mangamac` 1.6.1
+  - `eu.kanade.tachiyomi.extension.tr.outcatsscans` 1.6.59
+- **Güncellenen:** 6
+  - `eu.kanade.tachiyomi.extension.tr.arcurafansub` 1.6.0 → 1.6.2
+  - `eu.kanade.tachiyomi.extension.tr.eskimangalar` 1.6.6 → 1.6.7
+  - `eu.kanade.tachiyomi.extension.tr.holyscans` 1.6.0 → 1.6.1
+  - `eu.kanade.tachiyomi.extension.tr.kuroimanga` 1.6.61 → 1.6.65
+  - `eu.kanade.tachiyomi.extension.tr.milasub` 1.6.58 → 1.6.61
+  - `eu.kanade.tachiyomi.extension.tr.norascans` 1.6.1 → 1.6.2
+- Zaten güncel: **73**
+- İndirilemeyen: **0**
 
-İkon indirilen: 73
+İkon indirilen: 8
