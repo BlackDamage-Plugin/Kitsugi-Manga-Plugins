@@ -29,7 +29,7 @@ Kitsugi-Manga-Plugins/
         ├── tortugaceviri/       # Tortuga Çeviri
         ├── hayalistic/          # Hayalistic
         ├── mangaruhu/           # MangaRuhu
-        └── ... (88 eklenti)
+        └── ... (34 eklenti)
 
 ├── apk/                         # 📦 Derlenmiş eklentiler (APK + ikon)
 ├── builds/                      # 🔁 Depo kökü normalize edildiğinde okunan kopya
@@ -86,7 +86,7 @@ Araç gerisini (10 katalog dosyası, `code`, sıralama, URL'ler) kendisi yapar; 
 1. **Depo ekle:** Ayarlar → Eklenti depoları → şu adresi ekle
    `https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/index.min.json`
    (depo kökü de kabul edilir: `https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins`)
-2. **Yenile:** Depoyu yenile → 88 eklenti listelenir (SadScans, DuckScans, LunariScans, AiluraScans, Oblivion Scans, TürkManga, Fenrir Scans dahil).
+2. **Yenile:** Depoyu yenile → 34 eklenti listelenir (SadScans, DuckScans, LunariScans, AiluraScans, Oblivion Scans, TürkManga, Fenrir Scans dahil).
 3. **Güven + kur:** Her eklenti için "güven" onayı ver, sonra kur.
 4. **İmza notu:** Eski (farklı anahtarla imzalanmış) bir sürüm kuruluysa güncelleme "imza uyuşmuyor" diyebilir → o eklentiyi kaldır, yeniden kur. Kitaplık/okuma geçmişi silinmez.
 5. **`builds` dalı:** Uygulama depo kökünü `builds/index.json`'a normalize ediyorsa, `builds` dalının da güncel olması gerekir (main → builds PR'ı).
@@ -115,3 +115,11 @@ Araç gerisini (10 katalog dosyası, `code`, sıralama, URL'ler) kendisi yapar; 
 2. **Cloudflare & SSL Handshake (`KTS-SRC-9008` / HTTP 525):**
    - AlucardScans ve ZenithScans gibi sitelerin sunucu taraflı SSL sertifikaları veya alan adı yönlendirmeleri periyodik olarak çöker.
    - **Çözüm:** Domain aynalama (mirror) ve Cloudflare WebView Cookie desteği devreye alınır.
+
+### 🎯 Yalnızca paket eklentileri (izin listesi)
+
+`tools/izinli.txt` içinde hangi eklentilerin katalogda görüneceği yazılıdır.
+Şu an **yalnızca Drive paketindeki 34 eklenti** aktif; diğerleri devre dışı
+(`docs/devre-disi.md`). Katalog üreticisi bu listeyi uygular, upstream işi liste
+dışındaki eklentilere dokunmaz. Paket aktarımı yeni bir zip geldiğinde listeyi
+ve `apk/` klasörünü otomatik olarak o zip'in içeriğine indirger.
