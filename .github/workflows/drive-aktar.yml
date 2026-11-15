@@ -1,0 +1,211 @@
+name: Drive'dan Eklenti Aktar
+
+# Ajan/sandbox ağları Drive'a çıkamıyor; indirme GitHub runner'ında yapılır.
+# Sonuç her durumda docs/drive-rapor.md dosyasına yazılıp commit edilir
+# (rapor, ajanın okuyabildiği tek kanal; Actions log'u dış ağa kapalı).
+on:
+  workflow_dispatch:
+    inputs:
+      klasor:
+        description: "Drive klasör linki"
+        required: true
+        default: "https://drive.google.com/drive/folders/1PN3KBOzVkz9F8nZqlQezWUoVoo5gb7o1"
+      mod:
+        description: "inspect (sadece rapor) | apply (repoya işle)"
+        required: true
+        default: "apply"
+        type: choice
+        options: [inspect, apply]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: drive-aktar
+  cancel-in-progress: false
+
+jobs:
+  aktar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: gdown kur
+        run: pip install --quiet gdown
+
+      - name: Drive klasörünü indir
+        run: |
+          mkdir -p "$RUNNER_TEMP/drive"
+          set +e
+          gdown --folder "${{ inputs.klasor }}" -O "$RUNNER_TEMP/drive" > "$RUNNER_TEMP/gdown.log" 2>&1
+          echo "gdown çıkış kodu: $?"
+          tail -40 "$RUNNER_TEMP/gdown.log" || true
+          find "$RUNNER_TEMP/drive" -type f -printf '%10s  %p\n' | sort -k2 || true
+
+      - name: Envanter + aktarım + rapor
+        env:
+          MOD: ${{ inputs.mod }}
+          KLASOR: ${{ inputs.klasor }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python3 - <<'PY'
+          import os, re, shutil, zipfile, glob, datetime, subprocess
+
+          MOD   = os.environ["MOD"]
+          drive = os.environ["RUNNER_TEMP"] + "/drive"
+          stage = os.environ["RUNNER_TEMP"] + "/x"
+          apk_dir = os.path.join(os.getcwd(), "apk")
+          name_re = re.compile(r"^tachiyomi-(?P<lang>[a-z]{2,3})\.(?P<slug>[a-z0-9]+)-v(?P<ver>\d+\.\d+\.\d+)\.apk$")
+
+          def ver_tuple(s):
+              return tuple(int(x) for x in s.split("."))
+
+          lines = []
+          def out(s=""):
+              print(s); lines.append(s)
+
+          out("# Drive → Repo Aktarım Raporu")
+          out()
+          out(f"- Tarih: {datetime.datetime.utcnow():%Y-%m-%d %H:%M} UTC")
+          out(f"- Klasör: {os.environ.get('KLASOR','')}")
+          out(f"- Mod: **{MOD}**")
+          out(f"- Çalışma: {os.environ.get('RUN_URL','')}")
+          out()
+
+          files = [p for p in glob.glob(drive + "/**/*", recursive=True) if os.path.isfile(p)]
+          out("## 1) İndirilen dosyalar")
+          out()
+          if files:
+              for p in sorted(files):
+                  out(f"- `{os.path.basename(p)}` — {os.path.getsize(p):,} bayt")
+          else:
+              out("**Hiç dosya inmedi.** gdown çıktısı:")
+              out()
+              out("```")
+              log = os.environ["RUNNER_TEMP"] + "/gdown.log"
+              text = open(log, encoding="utf-8", errors="replace").read() if os.path.exists(log) else "(log yok)"
+              out("\n".join(text.strip().splitlines()[-25:]))
+              out("```")
+          out()
+
+          zips = [p for p in files if p.lower().endswith(".zip")]
+          os.makedirs(stage, exist_ok=True)
+          out("## 2) Zip envanteri")
+          out()
+          all_apks = []
+          for z in zips:
+              try:
+                  with zipfile.ZipFile(z) as zf:
+                      zf.extractall(stage)
+                      names = zf.namelist()
+                      apks = [n for n in names if n.lower().endswith(".apk")]
+                      out(f"### `{os.path.basename(z)}` — {len(names)} girdi, {len(apks)} APK")
+                      for n in apks:
+                          out(f"- {n} ({zf.getinfo(n).file_size:,} bayt)")
+                          all_apks.append((z, n))
+              except Exception as exc:
+                  out(f"- `{os.path.basename(z)}` açılamadı: `{exc}`")
+              out()
+
+          # sahne alanındaki tüm APK'ları topla (zip içindeki yol önemli değil)
+          found = {}
+          for dirpath, _dirs, fs in os.walk(stage):
+              for f in fs:
+                  if not f.lower().endswith(".apk"):
+                      continue
+                  m = name_re.match(f)
+                  if not m:
+                      out(f"- desene uymayan APK atlandı: `{f}`")
+                      continue
+                  pkg = f"eu.kanade.tachiyomi.extension.{m.group('lang')}.{m.group('slug')}"
+                  png = os.path.join(dirpath, pkg + ".png")
+                  k = (m.group("lang"), m.group("slug"))
+                  ver = ver_tuple(m.group("ver"))
+                  if k not in found or ver > found[k][0]:
+                      found[k] = (ver, os.path.join(dirpath, f), png if os.path.exists(png) else None)
+
+          existing = {}
+          for f in os.listdir(apk_dir):
+              m = name_re.match(f)
+              if m:
+                  existing[(m.group("lang"), m.group("slug"))] = (ver_tuple(m.group("ver")), f)
+
+          out("## 3) Karşılaştırma / aktarım")
+          out()
+          out(f"- Drive'da bulunan eklenti: **{len(found)}**")
+          out(f"- Repoda mevcut eklenti: **{len(existing)}**")
+
+          added, updated, same, only_repo, no_icon = [], [], [], [], []
+          for k, (ver, apk_path, png) in sorted(found.items()):
+              lang, slug = k
+              pkg = f"eu.kanade.tachiyomi.extension.{lang}.{slug}"
+              cur = existing.get(k)
+              if cur and cur[0] >= ver:
+                  same.append((pkg, cur[0], ver))
+                  continue
+              if MOD == "apply":
+                  ver_s = ".".join(map(str, ver))
+                  target = os.path.join(apk_dir, f"tachiyomi-{lang}.{slug}-v{ver_s}.apk")
+                  shutil.copy2(apk_path, target)
+                  icon_target = os.path.join(apk_dir, pkg + ".png")
+                  if png and not os.path.exists(icon_target.replace(".png", ".png")):
+                      shutil.copy2(png, icon_target)
+                  elif png:
+                      shutil.copy2(png, icon_target)
+                  elif not os.path.exists(icon_target):
+                      no_icon.append(pkg)
+                  if cur:
+                      os.remove(os.path.join(apk_dir, cur[1]))
+                      updated.append((pkg, ".".join(map(str, cur[0])), ver_s))
+                  else:
+                      added.append((pkg, ver_s))
+              else:
+                  (updated if cur else added).append(
+                      (pkg, ".".join(map(str, cur[0])), ".".join(map(str, ver))) if cur else (pkg, ".".join(map(str, ver))))
+
+          for k in existing:
+              if k not in found:
+                  only_repo.append((f"eu.kanade.tachiyomi.extension.{k[0]}.{k[1]}", ".".join(map(str, existing[k][0]))))
+
+          out(f"- Yeni eklenecek: **{len(added)}**")
+          for row in added:
+              out(f"  - `{row[0]}` {row[-1]}")
+          out(f"- Güncellenecek: **{len(updated)}**")
+          for row in updated:
+              out(f"  - `{row[0]}` {row[1]} → {row[2]}")
+          out(f"- Drive'daki sürüm daha eski/aynı (dokunulmadı): **{len(same)}**")
+          out(f"- Yalnızca repoda olan (Drive'da APK yok): **{len(only_repo)}**")
+          for p, v in only_repo:
+              out(f"  - `{p}` {v}")
+          if no_icon:
+              out(f"- İkonu bulunamayan: **{len(no_icon)}** → {', '.join(no_icon)}")
+          out()
+
+          os.makedirs("docs", exist_ok=True)
+          open("docs/drive-rapor.md", "w", encoding="utf-8").write("\n".join(lines) + "\n")
+          print(f"\nrapor yazıldı: docs/drive-rapor.md ({len(lines)} satır)")
+          PY
+
+      - name: Katalog üret
+        if: inputs.mod == 'apply'
+        run: python3 tools/build_catalog.py
+
+      - name: Değişiklikleri gönder
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok."
+            exit 0
+          fi
+          git diff --cached --stat
+          git commit -m "chore(drive): Drive aktarımı (mod: ${{ inputs.mod }}) + rapor"
+          git push

@@ -20,18 +20,76 @@ Kitsugi-Manga-Plugins/
 │       ├── mmrcms/tr/           # MMRCMS tabanlı 1 TR kaynak (MangaDenizi)
 │       └── all/MangaBall.kt     # Çok dilli MangaBall TR ayrıştırıcısı
 │
-└── keiyoushi-extensions-tr/     # ⚡ Keiyoushi / Mihon tabanlı 76 Türkçe Eklenti
+└── keiyoushi-extensions-tr/     # ⚡ Keiyoushi / Mihon tabanlı 88 Türkçe Eklenti
     ├── lib-multisrc/            # Ortak motor kütüphaneleri (UzayManga, Madara, Themesia)
-    └── src/tr/                  # 76 bağımsız eklenti paketi (.apk derlenebilir)
+    └── src/tr/                  # 88 bağımsız eklenti paketi (.apk derlenebilir)
         ├── afroditscans/        # AfroditScans (SvelteKit / UzayManga motoru)
         ├── golgebahcesi/        # Gölge Bahçesi
         ├── mangatr/             # Manga-TR
         ├── tortugaceviri/       # Tortuga Çeviri
         ├── hayalistic/          # Hayalistic
         ├── mangaruhu/           # MangaRuhu
-        ├── sadscans/            # SadScans
-        └── ... (76 eklenti)
+        └── ... (34 eklenti)
+
+├── apk/                         # 📦 Derlenmiş eklentiler (APK + ikon)
+├── builds/                      # 🔁 Depo kökü normalize edildiğinde okunan kopya
+├── tools/build_catalog.py       # 🛠️ Katalog üreticisi / doğrulayıcısı
+├── .github/workflows/katalog.yml# ✅ Katalog ↔ APK tutarlılık denetimi
+├── index.json / plugins.json    # Katalog (v1 biçimi)
+└── *.min.json                   # Katalog (sıkıştırılmış — istemci önce bunu ister)
 ```
+
+---
+
+## 🧩 Katalog Dosyaları (Uygulamanın Okuduğu Dosyalar)
+
+Kitsugi istemcisi depo URL'sini `builds/index.json` uç noktasına normalize eder ve **önce `.min.json` sürümlerini** ister; `.min.json` yoksa eklentiler "depoda yok" görünür. Bu yüzden aşağıdaki 10 dosya her zaman birlikte üretilir:
+
+| Dosya | Amaç |
+|---|---|
+| `index.json`, `plugins.json` | Kök katalog (Mihon/Keiyoushi uyumlu dizi biçimi) |
+| `index.min.json`, `plugins.min.json` | Aynı kataloğun sıkıştırılmış hâli — istemcilerin ilk baktığı dosyalar |
+| `builds/index.json`, `builds/plugins.json` | Depo kökü normalize edildiğinde okunan uç nokta |
+| `builds/index.min.json`, `builds/plugins.min.json` | Sıkıştırılmış `builds/` kopyaları |
+| `builds/index.v2.json`, `builds/index.min.v2.json` | v2 biçimi (`extensionList.extensions` + `sources`) |
+
+**URL tabanı (tek kaynak):** `https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/apk/`
+
+> Eski (`f26901964-eng`) hesap adı GitHub'da artık bulunmadığı için tüm `url` / `iconUrl` / `apkUrl` adresleri 404 dönüyordu; bu yüzden eklentiler uygulamada aktif görünmüyordu. Adresler artık tek yerden üretiliyor.
+
+### Katalog üretimi / doğrulama
+
+```bash
+python3 tools/build_catalog.py            # apk/ klasöründen 10 katalog dosyasını üretir
+python3 tools/build_catalog.py --check    # sadece denetler (CI: .github/workflows/katalog.yml)
+```
+
+Araç `apk/` içindeki her APK için ikon (`.png`) arar, `versionCode`'u sürümden hesaplar
+(`1.6.12 → 106012`), adları korur ve eksik dosya / tutarsızlık varsa uyarır.
+
+### 🔄 Güncel sürümler
+
+\`.github/workflows/upstream-guncelle.yml\` her gün 03:00 UTC'de (veya elle) çalışır:
+Keiyoushi resmi kataloğundan TR eklentilerinin en güncel APK + ikonlarını indirir, `apk/`
+klasörünü günceller, katalogları üretir ve `docs/guncelleme-raporu.md` raporuyla commit eder.
+
+### ➕ Yeni eklenti ekleme
+
+1. APK'yı `apk/tachiyomi-tr.<paket>-v<sürüm>.apk` adıyla koy (örn. `tachiyomi-tr.sadscans-v1.6.19.apk`).
+2. İkonu `apk/eu.kanade.tachiyomi.extension.tr.<paket>.png` adıyla koy.
+3. `python3 tools/build_catalog.py` çalıştır, değişiklikleri gönder.
+
+Araç gerisini (10 katalog dosyası, `code`, sıralama, URL'ler) kendisi yapar; elle JSON düzenlemeye gerek yok.
+
+### 📲 Uygulamada aktif hâle getirme
+
+1. **Depo ekle:** Ayarlar → Eklenti depoları → şu adresi ekle
+   `https://raw.githubusercontent.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins/main/index.min.json`
+   (depo kökü de kabul edilir: `https://github.com/BlackDamage-Plugin/Kitsugi-Manga-Plugins`)
+2. **Yenile:** Depoyu yenile → 34 eklenti listelenir (SadScans, DuckScans, LunariScans, AiluraScans, Oblivion Scans, TürkManga, Fenrir Scans dahil).
+3. **Güven + kur:** Her eklenti için "güven" onayı ver, sonra kur.
+4. **İmza notu:** Eski (farklı anahtarla imzalanmış) bir sürüm kuruluysa güncelleme "imza uyuşmuyor" diyebilir → o eklentiyi kaldır, yeniden kur. Kitaplık/okuma geçmişi silinmez.
+5. **`builds` dalı:** Uygulama depo kökünü `builds/index.json`'a normalize ediyorsa, `builds` dalının da güncel olması gerekir (main → builds PR'ı).
 
 ---
 
@@ -44,7 +102,7 @@ Kitsugi-Manga-Plugins/
 | **Tortuga Çeviri** | `tortugaceviri.com` | WordPress (Madara) | 🟢 Aktif | One Piece ve Shonen odaklı, en istikrarlı ve kesintisiz kaynak. |
 | **AfroditScans** | `afroditscans.com` | SvelteKit (`__data.json`) | 🟢 Aktif | Çok hızlı bölüm güncellemeleri; Kitsugi'nin yerel `SvelteMangaEngine` motoruyla tam uyumlu. |
 | **MangaRuhu** | `mangaruhu.com` | WordPress (Madara) | 🟢 Aktif | Popüler romantik, dram ve fantastik manhwa arşivi. |
-| **SadScans** | `sadscans.com` | Özel HTML | 🟢 Aktif | Kaliteli çevirileriyle tanınan bağımsız ekip. |
+| **SadScans** | `sadscans.org` | Özel HTML | 🟡 APK yok | Kaliteli çevirileriyle tanınan bağımsız ekip; Kotatsu parser'ı depoda var, APK henüz yok. |
 
 ---
 
@@ -57,3 +115,11 @@ Kitsugi-Manga-Plugins/
 2. **Cloudflare & SSL Handshake (`KTS-SRC-9008` / HTTP 525):**
    - AlucardScans ve ZenithScans gibi sitelerin sunucu taraflı SSL sertifikaları veya alan adı yönlendirmeleri periyodik olarak çöker.
    - **Çözüm:** Domain aynalama (mirror) ve Cloudflare WebView Cookie desteği devreye alınır.
+
+### 🎯 Yalnızca paket eklentileri (izin listesi)
+
+`tools/izinli.txt` içinde hangi eklentilerin katalogda görüneceği yazılıdır.
+Şu an **yalnızca Drive paketindeki 34 eklenti** aktif; diğerleri devre dışı
+(`docs/devre-disi.md`). Katalog üreticisi bu listeyi uygular, upstream işi liste
+dışındaki eklentilere dokunmaz. Paket aktarımı yeni bir zip geldiğinde listeyi
+ve `apk/` klasörünü otomatik olarak o zip'in içeriğine indirger.
