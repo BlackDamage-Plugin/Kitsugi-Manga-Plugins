@@ -111,7 +111,13 @@ jobs:
           if pin_file.is_file():
               pins = {l.strip() for l in pin_file.read_text(encoding="utf-8").splitlines() if l.strip()}
 
+          allow_file = repo / "tools" / "izinli.txt"
+          allow = set()
+          if allow_file.is_file():
+              allow = {l.strip() for l in allow_file.read_text(encoding="utf-8").splitlines() if l.strip()}
+
           new, upd, same, failed, icons, pinned = [], [], [], [], 0, []
+          disi = []
           for e in sorted(tr, key=lambda x: x["name"]):
               pkg = e["packageName"]
               slug = pkg.split(".tr.")[-1]
@@ -119,6 +125,9 @@ jobs:
               res = e.get("resources") or {}
               apk_url, icon_url = res.get("apkUrl"), res.get("iconUrl")
               cur = local.get(("tr", slug))
+              if allow and slug not in allow:
+                  disi.append(pkg)
+                  continue
               if slug in pins:
                   pinned.append((pkg, ".".join(map(str, cur[0])) if cur else "-", ver))
                   continue
@@ -156,6 +165,8 @@ jobs:
               out(f"  - `{p}` {o} → {v}")
           out(f"- Zaten güncel: **{len(same)}**")
           out(f"- Sabitlenmiş (zip sürümü korunuyor): **{len(pinned)}**")
+          if allow:
+              out(f"- İzin listesi dışı (devre dışı, dokunulmadı): **{len(disi)}**")
           for p, lv, uv in pinned:
               out(f"  - `{p}` repoda {lv} (upstream {uv})")
           out(f"- İndirilemeyen: **{len(failed)}**")

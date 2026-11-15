@@ -239,6 +239,18 @@ jobs:
               pin_file.parent.mkdir(parents=True, exist_ok=True)
               pin_file.write_text("\n".join(sorted(pins)) + "\n", encoding="utf-8")
 
+              # izin listesi: katalogda YALNIZCA paketteki eklentiler kalır
+              allow_file = repo / "tools" / "izinli.txt"
+              allow = sorted({i["slug"] for i in plan})
+              allow_file.write_text("\n".join(allow) + "\n", encoding="utf-8")
+              for p in list(apk_dir.glob("*.apk")):
+                  m = re.match(r"tachiyomi-[a-z]+\.([a-z0-9]+)-v\d+\.\d+\.\d+\.apk$", p.name)
+                  if m and m.group(1) not in allow:
+                      p.unlink()
+              for p in list(apk_dir.glob("*.png")):
+                  if p.stem.split(".")[-1] not in allow:
+                      p.unlink()
+
               # isim haritası (APK etiketi -> ad)
               name_file = repo / "tools" / "isimler.json"
               name_map = {}

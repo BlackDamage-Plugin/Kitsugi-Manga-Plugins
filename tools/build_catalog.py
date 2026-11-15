@@ -180,11 +180,22 @@ def load_previous() -> dict[str, dict]:
     return previous
 
 
+ALLOW_FILE = ROOT / "tools" / "izinli.txt"
+
+
+def load_allow() -> set[str]:
+    """tools/izinli.txt varsa yalnızca bu eklentiler kataloğa girer."""
+    if not ALLOW_FILE.is_file():
+        return set()
+    return {l.strip() for l in ALLOW_FILE.read_text(encoding="utf-8").splitlines() if l.strip()}
+
+
 def scan() -> list[dict]:
     if not APK_DIR.is_dir():
         sys.exit(f"HATA: {APK_DIR} bulunamadı.")
     previous = load_previous()
     names = load_name_map()
+    allow = load_allow()
     entries: list[dict] = []
     problems: list[str] = []
 
@@ -196,6 +207,8 @@ def scan() -> list[dict]:
             problems.append(f"dosya adı desene uymuyor: apk/{apk.name}")
             continue
         lang, slug, version = match.group("lang"), match.group("slug"), match.group("version")
+        if allow and slug not in allow:
+            continue  # izinli.txt dışındaki eklenti kataloğa girmez (devre dışı)
         pkg = f"eu.kanade.tachiyomi.extension.{lang}.{slug}"
         icon = APK_DIR / f"{pkg}.png"
         if not icon.is_file():
