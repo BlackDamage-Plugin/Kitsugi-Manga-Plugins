@@ -3,7 +3,7 @@
 - Tarih: 2026-11-14 23:02 UTC
 - Kaynak: `Kitsugi_Beta_Manga_Eklentileri.zip` (Drive, 34 APK)
 - Mod: **zorla** — zip’teki dosya sürüm aynı/eski olsa da birebir yazıldı
-- Repo kataloğu: **88 eklenti**
+- Repo kataloğu: **34 eklenti** (yalnızca bu paket — `tools/izinli.txt`)
 - Paketteki 34 APK: **34/34 birebir zip’ten** (sha256 doğrulandı), APK + ikon tam
 
 ## Tümü
